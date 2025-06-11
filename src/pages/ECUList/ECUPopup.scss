@@ -1,0 +1,160 @@
+.ecu-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    padding: 20px;
+    // display: none;
+    .popup-flip{
+        width: 600px;
+        position: relative;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        min-height: 300px;
+        &.ecu-popup-active{
+            section{
+                transform: rotateY(180deg);
+                z-index: 0;
+                opacity: 0;
+            }
+            aside{
+                transform: rotateY(0deg);
+                z-index: 1;
+                opacity: 1;
+            }
+            .rotate-icon{
+                transform: rotateY(360deg);
+            }
+        }
+        .rotate-icon{
+            width: 60px;
+            background: #e26935;
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            z-index: 2;
+            transition: 0.3s ease all;
+            img{
+                filter: invert(1);
+            }
+        }
+    }
+    section,aside {
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        position: absolute;
+        transition: 0.3s ease all;
+        height: 300px;
+        .close-icon{
+            position: absolute;
+            background: #e26935;
+            padding: 10px;
+            width: 35px;
+            height: 35px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            transition: 0.3s ease all;
+            transform: rotate(0deg);
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            &:hover{
+                border-radius: 50%;
+                transform: rotate(180deg);
+                padding: 12px;
+            }
+            img{
+                filter: invert(1);
+            }
+        }
+    }
+    section{
+        z-index: 1;
+        opacity: 1;
+    }
+    aside{
+        transform: rotateY(180deg);
+        z-index: 0;
+        opacity: 0;
+        .software-update-popup{
+            max-width: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+            img{
+                &.settings-small{
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    width: 40px;
+                    animation: settingssmall 3s infinite linear;
+                }
+                &.settings-big{
+                    position: absolute;
+                    top: -15px;
+                    right: -15px;
+                    width: 54px;
+                    animation: settingsbig 3s infinite linear;
+                }
+            }
+        }
+        .software-version-popup{
+            h4{
+                font-size: rem(17);
+                margin-bottom: 15px;
+                text-align: center;
+                span:first-child{
+                    padding-right: 10px;
+                    margin-right: 10px;
+                    border-right: 1px solid #939393;
+                }
+            }
+            a{
+                display: inline-block;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #e26935;
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 20px;
+                font-size: rem(15);
+                transition: 0.3s ease all;
+                border: 2px solid #e26935;
+                &:hover{
+                    color: #e26935;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+@keyframes settingssmall {
+    from{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+@keyframes settingsbig {
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}

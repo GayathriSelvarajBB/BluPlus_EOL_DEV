@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitTest version="1">
+    <file path="C:\Users\2201-00194\DTD\Git\DTD-React-UI\src\__tests__\LoginHeader.test.js">
+        <testCase name="Login Header File test should render the Component-click button" duration="77"/>
+    </file>
+    <file path="C:\Users\2201-00194\DTD\Git\DTD-React-UI\src\__tests__\Homepage.test.js">
+        <testCase name="Home page File test should redirect to login after click on Aftersale Network" duration="53"/>
+    </file>
+</unitTest>

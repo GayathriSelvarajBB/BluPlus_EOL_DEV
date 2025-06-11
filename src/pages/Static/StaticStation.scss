@@ -1,0 +1,77 @@
+.static-table{
+    width: 100%;
+    padding: 10px;
+    color: $main-black;
+    th{
+        text-align: start;
+        padding: 10px;
+        color:$main-black
+    }
+    tr{
+        margin: 10px;
+    }
+    td{
+        span{
+            margin-left: 10px;
+        }
+        margin-left: 10px;
+     
+    }
+}
+.static-flashing{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    >span{
+        border: 1px solid #ddd;
+        display: block;
+        width: 7%;
+        text-align: center;
+        padding: 4px;
+        margin: 5px 0px;
+        background: #3e66b0;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 1px 2px 3px #000;
+    }
+}
+.static-button{
+    float: right;
+    button{
+        background-color: #3e66b0;
+        border: 0px;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: rem(13);
+        cursor: pointer;
+        height: 33px;
+        margin: 10px;
+    }
+}
+.Static-list{
+    width: 40%;
+    border: 1px dotted #ddd;
+    padding: 20px;
+    box-shadow: 1px 2px 3px 1px;
+    margin: 10px 30px;
+    color: $main-black;
+}
+.static-success{
+    img{
+        margin-left: 12%;
+
+    }
+}
+.Ecu-flashing{
+    p{
+        text-align: center;
+        font-size: 14px;
+    }
+}
+.static-carsection{
+    width: 50%;
+}
+.static-section{
+    width:20%
+}

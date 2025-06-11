@@ -1,0 +1,358 @@
+// .service-session {
+//   padding: 20px;
+// }
+.service-session-list {
+  background: $dtc-card-background;
+  padding: 20px 5px;
+  border-radius: 10px;
+}
+.slick-slide > div {
+  margin: 0 5px;
+}
+.slick-list {
+  margin: 0 5px;
+}
+.slick-track{
+  margin: 0 -5px !important;
+}
+.slick-prev, .slick-next{
+  background: #3E66b0 !important;
+  border-radius: 50%;
+  z-index: 1;
+  // display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 25px !important;
+  height: 25px !important;
+  box-shadow: 0px 0px 30px rgb(0 0 0 / 30%);
+  top: 51.5%;
+  transform: translateY(-50%);
+  &::before{
+    content: '' !important;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%,-50%);
+    background-size: contain;
+    background-repeat: no-repeat;    
+    width: 15px;
+    height: 15px;
+    opacity: 1 !important;
+  }
+}
+.slick-prev {
+  left: -3px !important;
+  &::before{
+    background-image: url('../../assets/images/left-arrow.png');
+  }
+}
+.slick-next {
+  right: -3px !important;
+  &::before{
+    background-image: url('../../assets/images/right-arrow.png');
+  }
+}
+.slick-disabled {
+  opacity: 0.5;
+}
+
+
+
+
+.service-session-card {
+  background: $dtc-card;
+  padding: 10px;
+  border: 2px solid $service-session-border;
+  border-radius: 10px;
+  margin: 0 5px 20px;
+  .session-user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      .user-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 15%;
+          overflow: hidden;
+          position: relative;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          padding: 10px;
+          img{
+              display: block;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              width: 90%;
+              height: 90%;
+              transform: translate(-50%, -50%);
+              object-fit: contain;
+          }
+      }
+      .vechicle-model{
+        width: calc(100% - 40px);
+        span{
+            margin-left: 15px;
+            font-size: rem(14);
+            font-weight: 700;
+            color: $main-black;
+            display: block;
+            &:last-child{
+              margin-top: 5px;
+              font-size: rem(12);
+              color: #a0a0a0;
+            }
+        }
+      }
+  }
+  .service-details-date {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #eaeaea;
+      span.service-state {
+          width: 95px;
+          padding: 10px;
+          border-radius: 5px;
+          display: block;
+          text-align: center;
+          font-size: rem(11);
+          &.state-completed{
+              background-color: rgb(39 174 96 / 20%);
+              color: #28d671;
+          }
+          &.state-pending{
+              color: #F5B041;
+              background-color: rgb(245 176 65 / 15%);
+          }
+      }
+      span.service-date {
+          font-size: rem(11);
+          font-weight: bold;
+          color: $service-date;
+      }
+  }
+  h5{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      span{
+          &:first-child{
+              font-size: rem(12);
+              font-weight: bold;
+              color: $service-date;
+              margin-right: 5px;
+          }
+          &:last-child{
+              font-size: rem(12);
+              color: $main-black;
+          }
+      }
+  }
+  .session-id {
+      font-size: rem(13);
+      margin-bottom: 20px;
+      color: $main-black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+      button{
+        padding: 8px 16px;
+        font-size: rem(10);
+        border: 0;
+        background-color: #ca3333;
+        border-radius: 5px;
+        color: #fff;
+      }
+  }
+}
+.service-session-details{
+  margin-bottom: 20px;
+  padding: 0 15px;
+  .service-session-details-vin-active{
+    span{
+      &:first-child{
+        margin-right: 5px;
+        padding-right: 5px;
+        border-right: 1.5px solid #ddd;
+      }
+    }
+  }
+  .active-service-session-details{
+    background-color: $active-service-session;
+    border: 2px solid #20844a;
+    border-radius: 10px;
+    padding: 15px;
+    .service-session-id-details{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      span{
+        font-size: rem(13);
+        font-family: "facto-bold";
+        color: $main-black;
+      }
+      button{
+        border: 0;
+        padding: 8px 16px;
+        font-size: rem(13);
+        border-radius: 5px;
+        background-color: #ca3333;
+        color: #fff;
+        transition: 0.3s ease all;
+        &:hover{
+          box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        }
+        &:active{
+          display:block ;
+        }
+      }
+    }
+    .vehicle-content{
+      display: flex;
+      .current-car-img{
+        width: 40px;
+        height: 40px;
+        border-radius: 15%;
+        overflow: hidden;
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        img{
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 90%;
+          height: 90%;
+          transform: translate(-50%, -50%);
+          object-fit: contain;
+        }
+      }
+      .vehicle-model-content{
+        padding-left: 10px;
+        span{
+          display: block;
+          color: $main-black;
+          &:first-child{
+            font-family: "facto-bold";
+            font-size: rem(14);
+          }
+          &:last-child{
+            font-size: rem(12);
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+  h3{
+    font-size: rem(16);
+    margin-bottom: 10px;
+    color: $main-black;
+  }
+}
+.service-session .slick-dots{
+  display: none !important;
+}
+.existing-service{
+  h3{
+    font-size: rem(16);
+    margin-bottom: 10px;
+    padding: 0 15px;
+    color: $main-black;
+    margin-top: 10px;
+  }
+}
+.service-time{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 35px;
+  .start-time{
+    &:last-child{
+      span{
+        &:last-child{
+          text-align: right;
+        }
+      }
+    }
+  }
+  .service-pending{
+    width: 100%;
+    height: 15px;
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 3x rgb(0 0 0 / 40%);
+    position: relative;
+    overflow: hidden;
+    .service-pending-percentage{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 60%;
+      background-color: #F5B041;
+      border-radius: 10px;
+      background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+      background-size: 20px 20px;
+      animation: progress-bar-stripes 2s linear infinite;
+    }
+    @keyframes progress-bar-stripes {
+      from  { background-position: 40px 0; }
+      to    { background-position: 0 0; }
+    }
+    span{
+      font-size: rem(10);
+      margin-bottom: 0 !important;
+      position: relative;
+      font-family: "facto-bold";
+    }
+  }
+  span{
+    display: block;
+    font-size: rem(13);
+    color: $main-black;
+    &:first-child{
+      margin-bottom: 5px;
+      font-family: "facto-bold";
+      color: $service-time;
+    }
+  }
+}
+.vehicle-img{
+  display: flex;
+  justify-content: space-between;
+  .service-active-content{
+    display: flex;
+    >div{
+      margin-left: 15px;
+      span{
+        display: block;
+        text-align: center;
+        font-size: rem(14);
+        text-align: right;
+        color: $main-black;
+        &:first-child{
+          font-family: "facto-bold";
+        }
+        &:last-child{
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+.timer-session{
+  font-size: rem(16) !important;
+}

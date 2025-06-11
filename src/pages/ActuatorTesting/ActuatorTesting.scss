@@ -1,0 +1,177 @@
+.actuator-testing {
+    background: $dtc-card-background;
+    padding: 15px;
+    border-radius: 10px;
+}
+.select-parameters-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .multi-select-container{
+        width: 100%;
+        max-width: 400px;
+        margin: 0 1%;
+        .rmsc.multi-select,.dropdown-container{
+            width: 100%;
+        }
+        select{
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+             border-radius: 5px;
+            cursor: pointer;
+            // background-color: $dtc-card-background;
+            color: $main-black;
+            border-color: $border-color;
+        }
+    }
+}
+.actuator-testing-acc{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 30px;
+    .actuator-each-testing{
+        width: 100%;
+        margin: 0 0 20px;
+        border-radius: 10px;
+        background: #f8f8f8;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+        padding: 20px;
+        .actuator-title-testing{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            button{
+                padding: 10px 20px;
+                border: 0;
+                border-radius: 5px;
+                background: #1b6fee;
+                color: #fff;
+                font-size: 13px;
+                cursor: pointer;
+            }            
+        }
+        .actuator-buttons{
+            margin-top: 20px;
+            button{
+                padding: 10px 20px;
+                border: 0;
+                border-radius: 5px;
+                background: #1b6fee;
+                color: #fff;
+                font-size: 13px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.acutuator-testing-params{
+    margin-top: 30px;
+    table{
+        width: 100%;
+        thead{
+            background-color: #1b6fee;
+            color: #fff;
+            font-size: 17px;
+            td{
+                padding: 20px 10px;
+            }
+        }
+        td{
+            position: relative;
+            padding: 10px;
+            &.action_col{
+                width: 300px;
+            }
+            button{
+                padding: 10px 20px;
+                border: 0;
+                border-radius: 5px;
+                background: #5cad5c;
+                color: #fff;
+                font-size: 13px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            img{
+                width: 20px;
+                animation: loader-table-rotate 2s linear infinite;
+                display: none;
+                &.show_img{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    table,tr{
+        border-collapse: collapse;
+        border: 1px solid #ddd;
+    }
+}
+.btn-disabled {
+    opacity: 0.3;
+    cursor: no-drop !important
+}
+.btn-success {
+    background: #ff4242 !important;
+}
+.btn-alert {
+    background: #ff4242 !important;
+}
+@keyframes loader-table-rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.actuator-testing-box {
+    background: $dtc-card;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    // box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    h4{
+        color: $main-black;
+    }
+    .testing_buttons{
+        display: flex;
+        button{
+            margin-left: 10px;
+            padding: 10px 24px;
+            background: #1b6fee;
+            border: 0;
+            color: #fff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            cursor: pointer;
+        }
+    }
+}
+.Toastify__toast-body > div:last-child {
+    font-size: 13px;
+}
+.select-empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    img{
+        max-width: 350px;
+        opacity: 0.3;
+    }
+    h4{
+        text-align: center;
+    }
+}

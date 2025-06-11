@@ -1,0 +1,26 @@
+
+.infodata{
+    img{
+        width: 100%;
+    }
+}
+.react-pdf__Page__textContent{
+    display: none;
+}
+.react-pdf__Page__annotations{
+    height: 0px;
+    width: 0px;
+}
+.infodata-button{
+    button{
+        background-color: #3e66b0;
+        border: none;
+        color: #fff;
+        padding: 10px;
+        width: 140px;
+        border-radius: 8px;
+        font-size: 0.8125rem;
+        margin-bottom: 8px;
+        float: right;
+    }
+}

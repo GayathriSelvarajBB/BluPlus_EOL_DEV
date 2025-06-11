@@ -1,0 +1,166 @@
+.static2-table {
+    width: 97%;
+    overflow: auto;
+    margin: 10px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    p {
+        text-align: center;
+        font-size: 15px;
+        margin: 12px;
+        color: #2abf42;
+    }
+    > span {
+        border-bottom: 2px solid #b3b3b3;
+        display: block;
+        width: 100%;
+        padding: 0px 0 5px;
+        margin: 5px 0px;
+        color: #000;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 5px;
+        th {
+            padding: 6px 3px;
+            font-size: rem(14);
+            color: #fff;
+            text-align: center;
+            border: 1px solid #fff;
+            background-color: #3e66b0;
+        
+            input {
+                margin-left: -25px;
+            }
+            .injector-progress{
+                display: flex;
+                align-items: center;
+            }
+        }
+        td {
+            margin-top: 10px;
+            padding: 6px 3px;
+            font-size: rem(14);
+            color: $main-black;
+            border: 1px solid #fff;
+            width: 10%;
+            &:first-child {
+                text-align: center;
+            }
+            input[type="text"] {
+                height: 26px;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                width: 100%;
+                background-color: #e4e6eb;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 12px;
+                cursor: pointer;
+                color: #fff;
+                background-color: #3e66b0;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 5px #000;
+                margin-left: 15px;
+              
+              &:hover {
+                background-color: #3e8e41
+            }
+              
+              &:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #ddd;
+                transform: translateY(4px);
+            }
+            }
+                
+
+            .progress {
+                list-style-type: none;
+                li {
+                    margin-bottom: 18px;
+                }
+            }
+        }
+        thead {
+            text-align: center;
+            tr {
+                background-color: #3e66b0;
+                // td {
+                //   // color: $main-white;
+
+                // }
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child(odd) {
+                    background-color: $table-background-odd;
+                }
+                &:nth-child(even) {
+                    background-color: $table-background-even;
+                }
+            }
+        }
+    }
+}
+.static2-injector-list{
+    width: 59%;
+    margin-top: 10px;
+    table {
+        width: 99%;
+        border-collapse: collapse;
+
+        td {
+            padding: 6px 14px;
+            font-size: rem(14);
+            color: $main-black;
+            width: 30%;
+            //  border: 2px solid $main-white;
+        }
+        input{
+            border: 1px solid #d9d9d9;
+                    color: #87878a;
+                    padding: 2px;
+                    border-radius: 3px;
+                    width: 100%;
+        }
+                 thead {
+                    th{
+                        color: $main-white;
+                        padding: 5px;
+                        border: 2px solid #fff;
+                    }
+                     tr {
+                         background-color: #3e66b0;
+        
+                         td {
+                             color: $main-white;
+                         }
+                     }
+                 }
+        
+                 tbody {
+                     tr {
+                         &:nth-child(odd) {
+                             background-color: $table-background-odd;
+                         }
+                     }
+                 }
+        
+                 tbody {
+                     tr {
+                         &:nth-child(even) {
+                             background-color: $table-background-even;
+                         }
+                     }
+                 }
+                 }
+                 }

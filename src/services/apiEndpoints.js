@@ -1,0 +1,73 @@
+import { BASE_API_URL, BASE_URL } from "envConfig";
+
+const apiEndpoints = {
+   login: `${BASE_API_URL}/login`,
+   refreshToken: `${BASE_API_URL}/refresh-token`,
+   logout: `${BASE_API_URL}/logout`,
+   TechBulletin:`${BASE_API_URL}/vehicle/technical-bulletins?vinNumber=T834023XC3943HU4R`,
+   VechicleFlashing:`${BASE_API_URL}/vehicle/get-vehicle-engineering-data`,
+   SymtomsDiagnosis: `${BASE_API_URL}/vehicle/symptoms-diagnostics-options`,
+   SymtomsDiagnosisValues: `${BASE_API_URL}/vehicle/symptoms-diagnostics-data`,
+   extendLoginExpiryTime: `${BASE_URL}/logout-extend`,
+   vehicleConnection: `${BASE_URL}/vehicle/vehiclestatus`,
+   masterParamList: `${BASE_URL}/diagnostic/retrieve-master-parameters`,
+   vehicleparameters: `${BASE_URL}/vehicle/vehicleparameters`,
+   storeUseParamList: `${BASE_URL}/diagnostic/store-user-param-data`,
+   measurement: `${BASE_URL}/measurement/ecu-list`,
+   measurementEcuparameter: `${BASE_URL}/measurement/ecu-parameters`,
+   measurementEcuStatus: `${BASE_URL}/measurement/ecu-status`,
+   measurementecuparameterValues: `${BASE_URL}/measurement/ecu-parameter-values`,
+   measurementEcuparameterStatus: `${BASE_URL}/measurement/ecu-status-values`,
+   measurementEcuparameterStatusValues: `${BASE_URL}/measurement/get-ecu-status-values`,
+   vehicleInfo: `${BASE_API_URL}/vehicle/get-vehicle-manufacturing-data`,
+   serviceHistory: `${BASE_API_URL}/vehicle/find-history-info`,
+   diagnosticsProcedure: `${BASE_API_URL}/vehicle/diagnostics-procedure`,
+   fetchUserSelectedMasterParamList: (username) =>
+      `${BASE_URL}/diagnostic/get-user-parm-data?technician=${username}`,
+
+   verifyVin: (vin) => `?vin=${vin}`,
+   downloadPDX:
+      "DefaultEndpointsProtocol=https;AccountName=devasdt;AccountKey=bUTx2EjjxhQUppBE6fZfUxqA85fcpSm/uoLH5dnMcnQB4xnOnYZouiQoBXpd7dIeZQGkhRjusUYr+AStk7V9Qg==;EndpointSuffix=core.windows.net",
+   fetchVehicleConfiguration: (vin) =>
+      `${BASE_URL}/vehicle/vehiclestatus/${vin}`,
+   fetchEcuKeys: `${BASE_URL}/vehicle/ecu-accessKeys`,
+   serviceSession: `${BASE_URL}/diagnostic/send-session-log`,
+   getTransferredServiceSession: `${BASE_URL}/diagnostic/get-session-log`,
+
+   getManifestInfo: `${BASE_URL}/vehicle/vehiclestatus`,
+   getManifestId: (id) => `${BASE_URL}/vehicle/get-manifest?id=${id}`,
+   getWorkOrderId: (vin) => `${BASE_URL}/vehicle/work-order/${vin}`,
+   // vciDetect: "http://localhost:8082/vci-connect",
+   setRoutine: `${BASE_API_URL}/vehicle/routine`,
+   getRoutine: `${BASE_API_URL}/vehicle/get-routine`,
+   getRoutineTyre: `${BASE_API_URL}/vehicle/get-routine-tyre`,
+   setRoutineTyre: `${BASE_API_URL}/vehicle/routine-tyre`,
+   getActuatorData: `${BASE_URL}/vehicle/ecu-active-test-list`,
+   setActuatorData: `${BASE_URL}/vehicle/ecu-active-test-data`,
+   getDTC: `${BASE_URL}/vehicle/ecu-dtc-list`,
+   // getDTC: "https://apidiagnostics.bluebinaries.com/dtd-demo/diagnostic-trouble-codes/get-ecu-dtc-list",
+   getECU: `${BASE_URL}/measurement/ecu-list`,
+   // getScanEcu: "https://apidiagnostics.bluebinaries.com/dtd-demo/twin-ecu-scan",
+   getScanEcu: `${BASE_URL}/vehicle/ecu-scan`,
+   getEachEcuInfo: `${BASE_URL}/vehicle/ecu-info`,
+   measurementecuparameter: `${BASE_URL}/measurement/ecu-parameters`,
+   measurementecustatus: `${BASE_URL}/measurement/ecu-status`,
+   measurementecuparametervalues: `${BASE_URL}/measurement/ecu-parameter-values`,
+   measurementecuparameterstatus: `${BASE_URL}/measurement/ecu-status-values`,
+   measurementecuparameterstatusData: `${BASE_URL}/measurement/write-ecu-status-values`,
+   eolecuParameterData:`${BASE_API_URL}/vehicle/fetch-ecu-parameters`,
+   eolLabelData:`${BASE_API_URL}/vehicle/fetch-ecu-parameters-list`,
+   eolSaveComponent:`${BASE_API_URL}/vehicle/save-component-flashing-status`,
+   eolGetComponent:`${BASE_API_URL}/vehicle/fetch-component-flashing-status`,
+   eolBatchID:`${BASE_API_URL}/vehicle/fetch-component-flashing-batch-ids`,
+   Readandwrite:`${BASE_API_URL}/vehicle/fetch-ecu-part-details-read-write`,
+   batteryManufacture:`${BASE_API_URL}/vehicle/fetch-battery-manufacturer-data`,
+   wahaValues:`${BASE_API_URL}/vehicle/fetch-wheel-alignment-reference-values`,
+   stationActivity:`${BASE_API_URL}/vehicle/save-station-activity-information`,
+   fetchStationActivity:`${BASE_API_URL}/vehicle/fetch-station-activity-parameters`,
+   fetchStationInformation:  `${BASE_API_URL}/vehicle/fetch-station-information`,
+   fetchWorkIDInformation:  `${BASE_API_URL}/vehicle/fetch-plm-work-orders`
+
+};
+
+export default apiEndpoints;

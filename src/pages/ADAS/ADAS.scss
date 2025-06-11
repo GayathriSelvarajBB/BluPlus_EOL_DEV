@@ -1,0 +1,50 @@
+.adas-main {
+    display: flex;
+}
+.adas-section {
+    width: 100%;
+    margin: 10px 6px;
+}
+.adas-requirements {
+    width: 50%;
+    margin: 10px;
+}
+.adas-table {
+   margin: 10px;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        th {
+            padding: 6px 3px;
+            font-size: rem(14);
+            color: #fff;
+            text-align: center;
+            border: 1px solid #fff;
+            background-color: #3e66b0;
+        }
+        td {
+            padding: 6px 3px;
+            font-size: rem(14);
+            color: $main-black;
+            text-align: center;
+            border: 1px solid #fff;
+            width: 10%;
+        }
+        thead {
+            text-align: center;
+            tr {
+                background-color: #3e66b0;
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child(odd) {
+                    background-color: $table-background-odd;
+                }
+                &:nth-child(even) {
+                    background-color: $table-background-even;
+                }
+            }
+        }
+    }
+}

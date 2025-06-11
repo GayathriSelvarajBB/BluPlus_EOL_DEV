@@ -1,0 +1,616 @@
+.header {
+   display: flex;
+   // flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   background: $dtc-card-background;
+   position: relative;
+   margin: 0 auto;
+   box-shadow: $vech-info-shadow;
+   width: 100%;
+   z-index: 9;
+   margin-bottom: 20px;
+   border-radius: 10px;
+   // background: linear-gradient(to bottom, #001671 47%, #002888 100%);
+   &.hardware-header {
+      .header-vin-details {
+         width: 75%;
+         order: 2;
+      }
+      .logo-sec {
+         width: 50%;
+         order: -1;
+         padding: 15px 0px 15px 0px;
+      }
+      .logo-section {
+         width: 20%;
+         order: -1;
+         padding: 15px 0px 15px 0px;
+         .logo-section-img {
+            cursor: pointer;
+            width: 175px;
+            padding-left: 25px;
+            img {
+               filter: $logo-img;
+            }
+         }
+      }
+   }
+
+   .header-vin-details {
+      width: 100%;
+      padding: 5px;
+
+      ul {
+         display: flex;
+         list-style: none;
+         align-items: center;
+         justify-content: flex-end;
+         flex-wrap: wrap;
+
+         li {
+            margin-right: 20px;
+
+            &:last-child {
+               margin-right: 0;
+               width: 100%;
+            }
+
+            span {
+               color: $main-black;
+               font-size: rem(13);
+               font-family: "facto-bold", sans-serif;
+               text-transform: uppercase;
+               margin-left: 5px;
+            }
+
+            &.header-vin-list {
+               display: flex;
+               align-items: center;
+               margin-top: 10px;
+
+               span {
+                  margin-left: 7px;
+               }
+
+               &.connectivity-success {
+                  span {
+                     color: #2abf42;
+                  }
+
+                  svg {
+                     path {
+                        fill: #2abf42;
+                     }
+                  }
+               }
+
+               &.connectivity-failed {
+                  span {
+                     color: #ca3333;
+                  }
+
+                  svg {
+                     path {
+                        fill: #ca3333;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   &:before {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: $main-black;
+      left: 0;
+      bottom: 0;
+   }
+
+   .header-virtual {
+      // margin-left: 23%;
+      width: 35%;
+      filter: brightness(5);
+      h2 {
+         font-size: 17px;
+         // color: #3e66b0;
+         color: $main-black;
+         text-align: center;
+         font-family: "Facto-bold";
+      }
+   }
+   .logo-sec {
+      // display: flex;
+      // justify-content: space-between;
+      width: 100%;
+      overflow: auto;
+
+      .logo-sec-img {
+         cursor: pointer;
+         width: 175px;
+         padding-left: 25px;
+         img {
+            filter: $logo-img;
+         }
+      }
+      // .cursor_not_allowed {
+      //    cursor: not-allowed;
+      // }
+
+      .ecu-sec-header {
+         ul {
+            display: flex;
+            list-style: none;
+
+            li {
+               padding: 8px 0px 8px 38px;
+               position: relative;
+               width: 180px;
+               display: flex;
+               align-items: center;
+               section {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+               }
+               &.detected-ecus {
+                  background-color: #3e66b0;
+                  .selected-ecu-box {
+                     color: #3e66b0;
+                  }
+
+                  &::before {
+                     content: "";
+                     width: 40px;
+                     height: 100%;
+                     background-color: $dtc-card-background;
+                     clip-path: polygon(100% 0, 15% 0, 15% 99%);
+                     position: absolute;
+                     left: -6px;
+                     top: 0px;
+                     @include for-tablet {
+                        top: -1px;
+                        left: -7px;
+                     }
+                     @include for-sidebar {
+                        top: -1px;
+                        left: -7px;
+                     }
+                  }
+               }
+               &.not-detected-ecus {
+                  background-color: #e3b200;
+                  .selected-ecu-box {
+                     color: #e3b200;
+                  }
+
+                  &::before {
+                     content: "";
+                     width: 40px;
+                     height: 100%;
+                     background-color: #ca3333;
+                     clip-path: polygon(100% 0, 15% 0, 15% 99%);
+                     position: absolute;
+                     left: -6px;
+                     top: 0;
+                  }
+               }
+
+               &.health-ecus {
+                  background-color: #3e66b0;
+                  .selected-ecu-box {
+                     color: #ca3333;
+                  }
+                  &::before {
+                     content: "";
+                     width: 40px;
+                     height: 100%;
+                     background-color: #3e66b0;
+                     clip-path: polygon(100% 0, 15% 0, 15% 99%);
+                     position: absolute;
+                     left: -6px;
+                     top: 0;
+                  }
+               }
+               &.vehicle-status {
+                  background-color: #1f468e;
+                  color: #fff;
+
+                  &::before {
+                     content: "";
+                     width: 40px;
+                     height: 100%;
+                     background-color: #3e66b0;
+                     clip-path: polygon(100% 0, 15% 0, 15% 99%);
+                     position: absolute;
+                     left: -6px;
+                     top: 0;
+                  }
+               }
+
+               &.engine-details {
+                  background-color: #3e66b0;
+                  color: #fff;
+                  &::before {
+                     content: "";
+                     width: 40px;
+                     height: 100%;
+                     background-color: #1f468e;
+                     clip-path: polygon(100% 0, 15% 0, 15% 99%);
+                     position: absolute;
+                     left: -6px;
+                     top: 0;
+                  }
+               }
+               .engine-rpm {
+                  display: flex;
+                  flex-direction: column;
+                  position: absolute;
+                  right: 34px;
+               }
+               &.battery-details {
+                  &::before {
+                     content: "";
+                     width: 40px;
+                     height: 100%;
+                     background-color: #3e66b0;
+                     clip-path: polygon(100% 0, 15% 0, 15% 99%);
+                     position: absolute;
+                     left: -7px;
+                     top: 0;
+                  }
+               }
+
+               &.health-ecus {
+                  background-color: #ca3333;
+               }
+
+               &.detected-ecus,
+               &.health-ecus,
+               &.not-detected-ecus {
+                  display: flex;
+
+                  .selected-ecu-box {
+                     background-color: #fff;
+                     width: 40px;
+                     height: 40px;
+                     border-radius: 3px;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     padding: 5px;
+                     font-size: 16px;
+                     font-family: "facto-bold", sans-serif;
+                  }
+
+                  .ecu-details-box {
+                     padding-left: 10px;
+                     margin-left: 15px;
+
+                     h4 {
+                        color: #fff;
+                        font-size: rem(14);
+                     }
+
+                     h5 {
+                        color: #fff;
+                        margin-bottom: 12px;
+                        margin-top: -15px;
+                     }
+
+                     span {
+                        font-size: rem(10);
+                        color: #fff;
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                     }
+                     img {
+                        margin-left: 15px;
+                     }
+                  }
+               }
+
+               &.vehicle-status {
+                  h5 {
+                     color: #fff;
+                     padding-bottom: 7px;
+                     margin-top: -5px;
+                  }
+
+                  .engine-details {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+
+                     .km-run {
+                        background-color: #3a3b3c;
+                        padding: 9px 9px;
+                        border-radius: 5px;
+                        margin-top: 1px;
+
+                        span {
+                           color: #fff;
+                           font-family: "digital", sans-serif;
+                           font-size: rem(25);
+                        }
+                     }
+
+                     h5 {
+                        color: #fff;
+                        padding-left: 5px;
+                        margin-top: 10px;
+                     }
+                  }
+               }
+
+               &.engine-details {
+                  h5 {
+                     color: #fff;
+                     padding-bottom: 2px;
+                     margin-top: -7px;
+                  }
+
+                  .engine-settings {
+                     background-color: #3a3b3c;
+                     padding: 9px 9px;
+                     border-radius: 5px;
+                     margin-top: 5px;
+                     display: inline-block;
+                     position: relative;
+
+                     span {
+                        color: #fff;
+                        font-family: "digital", sans-serif;
+                        font-size: rem(25);
+                     }
+                  }
+               }
+
+               &.battery-details {
+                  padding-right: 20px;
+                  background-color: #1f468e;
+                  border-radius: 0px 0px 10px 0;
+
+                  h5 {
+                     color: #fff;
+                     text-align: center;
+                  }
+
+                  span {
+                     margin-top: 4px;
+                     margin-bottom: 4px;
+                     color: #fff;
+                     font-size: rem(10);
+                     display: block;
+                     text-align: center;
+                     width: 100%;
+                  }
+
+                  .battery-percentage {
+                     position: relative;
+                     overflow: hidden;
+                     &::before {
+                        content: "";
+                        position: absolute;
+                        right: 0px;
+                        top: 50%;
+                        width: 5.5px;
+                        height: 10px;
+                        background: #fff;
+                        transform: translateY(-50%);
+                        border-radius: 0 5px 5px 0;
+                     }
+                     .battery-width {
+                        position: absolute;
+                        left: 2px;
+                        top: 2px;
+                        height: 86%;
+                        border-radius: 4px 0 0 4px;
+                        &.battery-green {
+                           background-color: #2abf42;
+                        }
+
+                        &.battery-yellow {
+                           background-color: #ffc207;
+                        }
+
+                        &.battery-red {
+                           background-color: #ca3333;
+                        }
+                     }
+                     span {
+                        color: #292929;
+                        font-weight: bold;
+                        font-size: 16px;
+                     }
+                     img {
+                        width: 80px;
+                     }
+
+                     .battery-common {
+                        position: absolute;
+                        width: 100%;
+                        top: 0;
+                        span {
+                           text-align: center;
+                           display: block;
+                           color: #fff;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   h1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: "Facto-bold", sans-serif;
+      font-size: rem(40);
+      line-height: 0.5;
+      color: $main-black;
+
+      @include for-phone {
+         display: none;
+      }
+
+      span {
+         font-size: rem(13);
+         margin-top: 20px;
+         display: inline-block;
+      }
+   }
+}
+
+.login-button-wrapper {
+   display: flex;
+   justify-content: center;
+}
+.ecu_con {
+   position: relative;
+   .sp1 {
+      position: absolute;
+      left: -10px;
+      top: -6px;
+      background-color: $nofalut-ecu;
+      border-radius: 50%;
+      padding: 3px;
+   }
+   .sp2 {
+      position: absolute;
+      top: -5px;
+      right: -8px;
+      background-color: $nofalut-ecu;
+      border-radius: 50%;
+      padding: 3px;
+   }
+   .sp3 {
+      position: absolute;
+      bottom: -8px;
+      left: -10px;
+      background-color: $nofalut-ecu;
+      border-radius: 50%;
+      padding: 3px;
+   }
+   .sp4 {
+      position: absolute;
+      bottom: -9px;
+      right: -8px;
+   }
+   .sp_red {
+      background-color: #ca3333;
+      border-radius: 50%;
+      padding: 3px;
+   }
+   .sp_yellow {
+      background-color: #ffc207;
+      border-radius: 50%;
+      padding: 3px;
+   }
+   .sp_green {
+      background-color: $nofalut-ecu;
+      border-radius: 50%;
+      padding: 3px;
+   }
+}
+
+.mini-loader-header {
+   $loader-size: 15px;
+   padding: 0;
+   display: inline-block;
+   width: $loader-size;
+   height: $loader-size;
+   margin-left: 20px;
+   background-color: transparent;
+   border: 2px solid $main-black;
+   border-left-color: transparent;
+   border-right-color: transparent;
+   border-radius: 50%;
+   animation: loader-spinner infinite 0.6s linear;
+}
+.list-header {
+   // font-family: "facto-bold";
+   // display: flex;
+   align-items: center;
+   // width: 100%;
+   // justify-content: space-between;
+   margin-bottom: 15px;
+   padding: 0 8px 0px 12px;
+   // display: none;
+   span {
+      font-size: 20px;
+      font-family: "facto-bold";
+      white-space: nowrap;
+      opacity: 1;
+      color: $main-black;
+   }
+
+   ul {
+      list-style: none;
+      cursor: pointer;
+
+      li {
+         width: 14px;
+         height: 2px;
+         background-color: $main-black;
+         margin-bottom: 3px;
+         margin-right: 3px;
+
+         &:last-child {
+            margin-bottom: 0;
+         }
+      }
+   }
+}
+.station-name {
+   margin: 10px 5px 0px 5px;
+   width: 20%;
+   ul {
+      list-style-type: none;
+      li {
+         span {
+            font-size: 13px;
+            font-weight: bolder;
+            &:last-child {
+               font-weight: lighter;
+               margin-left: 10px;
+            }
+         }
+      }
+   }
+   .station-name-sec {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      span {
+         width: 70%;
+         display: block;
+         color: $main-black;
+      }
+   }
+}
+
+/*=====================
+   manufacture header
+=====================*/
+.manufacture-header {
+   .header-vin-details {
+      width: auto !important;
+   }
+   .header-virtual {
+      width: auto !important;
+   }
+   .logo-section {
+      width: auto !important;
+   }
+}

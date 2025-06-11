@@ -1,0 +1,61 @@
+.card-view-ecu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 1%;
+    .ecu-each-card{
+        width: 31.3%;
+        margin: 0 1% 20px;
+        background-color: #fff;
+        display: flex;
+        &.ecu-pass{
+            .ect-strap{
+                background-color: #2ECC71;
+            }
+        }
+        &.ecu-failure{
+            .ect-strap{
+                background-color: #E74C3C;
+            }
+        }
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            .ect-strap,.dtc-mistake,.ecu-mistake {
+                width: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 14px;
+                height: 100%;
+            }
+            h4 {
+                width: calc(100% - 182px);
+                padding: 10px;
+                font-size: rem(15);
+            }
+        }
+    }
+}
+.dtc-mistake{
+    margin-right: 2px;
+    &.status-success{
+        background-color: #2ECC71;
+    }
+    &.status-failure{
+        background-color:  #E74C3C 
+        ;
+    }
+}
+.ecu-mistake{
+    &.status-success{
+        background-color: #2ECC71;
+    }
+    &.status-failure{
+        background-color:  #E74C3C 
+        ;
+    }
+}
+.status-view {
+    width: 122px !important;
+}

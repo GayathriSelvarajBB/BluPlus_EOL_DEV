@@ -1,0 +1,28 @@
+.sign-table{
+    margin: 10px;
+    table{
+        width: 100%;
+    border-collapse: collapse;
+   
+    th{
+
+        padding: 5px;
+        background-color: #3e66b0;
+        color: #fff;
+    }
+    tr{
+        td{
+            padding: 10px 0px;
+          text-align: center;
+        font-size: 15px;
+        &:first-child{
+            text-align: start;
+        }
+    }
+        &:nth-child(even){
+            background-color: #eee;
+
+        }
+    }
+    }
+}

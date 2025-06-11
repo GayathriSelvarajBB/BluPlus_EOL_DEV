@@ -1,0 +1,18 @@
+.toast-close-btn-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   .toast-close-btn {
+      color: white;
+      font-size: 18px;
+      line-height: 11px;
+      padding: 12px;
+      border-radius: 50%;
+      transition: all 0.3s;
+
+      &:hover {
+         background-color: rgba(0, 0, 0, 0.2);
+      }
+   }
+}

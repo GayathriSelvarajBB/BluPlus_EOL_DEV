@@ -1,0 +1,190 @@
+.Battery-station{
+    display: flex;
+    max-width: 1150px;
+    margin-left: auto;
+}
+.Brake-station{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1010px;
+    margin: 50px 0 50px auto;
+}
+.Dynamic-station{
+    display: flex;
+    max-width: 1150px;
+    justify-content: space-between;
+    margin-left: auto;
+}
+.Flow-main{
+    max-width: 1150px;
+    margin: 0 auto;
+}
+.Straight-line{
+    position: relative;
+    cursor: not-allowed;
+    &::before{
+        content: "";
+        background-image: url("../../assets/images/line.png");
+        width: 150%;
+        height: 4px;
+        position: absolute;
+        background-repeat: repeat-x;
+        right: -156px;
+        top: 50px;
+    }
+}
+.cursor-allowed{
+    cursor: pointer;
+}
+.crave-line{
+    position: relative;
+    cursor: not-allowed;
+    &::before{
+        content: "";
+    background-image: url("../../assets/images/curve.png");
+    width: 100%;
+    height: 108px;
+    position: absolute;
+    left: 99px;
+    top: 38%;
+    background-repeat: no-repeat;
+
+    }
+}
+.down-curve{
+    position: relative;
+    cursor: not-allowed;
+    left: 0px;
+    &::before{
+        content: "";
+        background-image: url("../../assets/images/downcurve.png");
+        width: 102%;
+        position: absolute;
+       height: 113px;
+       transform: rotate(270deg);
+       background-repeat: no-repeat;
+       left: 78%;
+       top: -42%;
+    }
+}
+.Battery-line{
+    position: relative;
+    cursor: not-allowed;
+    &::before{
+        content: "";
+        background-image: url("../../assets/images/battery-line.png");
+        position: absolute;
+        width: 257%;
+        height: 110px;
+        background-repeat: no-repeat;
+        top: 96%;
+        right: -188%
+    }
+}
+.Dynamic-line{
+    position: relative;
+    cursor: pointer;
+    left: 33px;
+    &::before{
+    content: "";
+    background-image: url("../../assets/images/downcurve.png");
+    width: 102%;
+    position: absolute;
+    height: 113px;
+    transform: rotate(270deg);
+    background-repeat: no-repeat;
+    left: 47%;
+    top: -60%;
+    }
+}
+.Dynamic-line-curve{
+    position: relative;
+    cursor: pointer;
+    left: 32px;
+    &::before{
+    content: "";
+    background-image: url("../../assets/images/curve.png");
+    width: 100%;
+    height: 108px;
+    position: absolute;
+    left: 116px;
+    top: 33%;
+    background-repeat: no-repeat;
+    }
+}
+
+.beforeline{
+    position:relative ;
+    // &::after{
+    //     content: "";
+    //     background-image: url("../../assets/images/line.png");
+    //     width: 150%;
+    //    height: 4px;
+    //    position: absolute;
+    //    background-repeat: repeat-x;
+    //    left: -153px;
+    //    top: 51px;
+    // }
+}
+.afterline{
+    position: relative;
+    cursor: pointer;
+    // &::after{
+    //        content: "";
+    // position: absolute;
+    // width: 92%;
+    // background-color: rgba(42, 191, 66, 0.7490196078);
+    // height: 72%;
+    // left: 5px;
+    // top: 27px;
+    // border-radius: 69%;
+    // }
+}
+.active-station{
+    background-image: url("../../assets/images/car-station.png");
+}
+.Carstatus{
+    position: relative;
+    left: -4px;
+    transform: rotate(89deg);
+    top: 10px;
+}
+.Carstatusbreak{
+    position: relative;
+    right: 79px;
+    top: -93px;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(42, 191, 66, 0.7490196078);
+        border-radius: 50%;
+
+    }
+}
+.Inactive{
+    // filter: brightness(0.5);
+    cursor: not-allowed;
+}
+.Order-number{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    span{
+    color:#0521ff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background: #ddddddba;
+    width: 30%;
+    text-align: center;
+    box-shadow: 2px 2px 3px 2px #003579;
+    &:first-child{
+        margin-right: 25px;
+    }
+    }
+}
+.cursor-allowed{
+    cursor: pointer;
+}

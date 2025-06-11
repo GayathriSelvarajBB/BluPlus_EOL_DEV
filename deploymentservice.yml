@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: react-ui-dtd
+  name: react-ui-deployment-dtd
+  namespace: dtd-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-ui-dtd
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: react-ui-dtd
+    spec:
+      containers:
+      - image: acrbbk8s.azurecr.io/acrbbk8s/react-ui-dtd:latest
+        name: react-ui-dtd
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 80
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-ui-service-dtd
+  namespace: dtd-dev
+  labels:
+    run: react-ui-dtd
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: react-ui-dtd
+  type: ClusterIP

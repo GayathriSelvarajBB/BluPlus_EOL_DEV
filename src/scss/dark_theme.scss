@@ -1,0 +1,221 @@
+/*common colors*/
+$main-white: #000;
+$main-black: #fff;
+$white-only: #fff;
+$black-only: #000;
+$main-bg: #284272;
+
+$bg-light-blue:#242c3d;
+
+
+/*vehicle-info-page*/
+$main-site-color: #e26935;
+$setting-rotate: #1b6fee;
+$progress-bar-color: #6082cd;
+$ecu-specification-bg: rgb(138 144 155 / 73%);
+$button-dark-blue: #083589;
+$vech-info-title: #fff;
+$vech-info-content: #9f9f9f;
+$battery-circle-border: #fb6413;
+$range-circle-border: #2d8ffa;
+$car-info-back: #404040;
+$status-ok: #2ead2e;
+$status-failure: #ff0000;
+$status-update: #fa5c19;
+$error-code: #ff0000;
+$indicaters-color: #fff;
+$background-image: url("../assets/images/car2d_darkMode.png");
+$good-ecu:  #41ad48;
+$fault-ecu: #f47d1f;
+$active-fault-ecu:#ed5d62;
+$In-active-fault-ecu:#f5d349;
+$pending-fault-ecu:#c7c8ca;
+$inactive-fault-ecu: #dfd3d5;
+$vech-info-shadow: 0px 0px 10px rgb(0 0 0 / 61%);
+$extra-title: #999999;
+$status-car: rgb(82 255 155 / 46%);
+$status-car-failure: rgb(255 93 77 / 68%);
+$car-ecu-status-color: #444444;
+$car-status-head: #fff;
+$dtc-issue-color: rgb(255 101 85 / 60%);
+$dtc-bus-info: #878787;
+$dtc-border: #505050;
+$dtc-card-background: #1e1e2d;
+$logout-button:#202030;
+$vehicle-info-popup: #454545;
+$background-box: #4a4a4a;
+$list-circle: #363636;
+$healthy-ecu: #6ef0a5;
+$dtc-card: #2b2b3d;
+$vin-identifier: #656565;
+$card-arrow: #b0aeae;
+$vehicle-parameter-list: #656565;
+$parameter-title-box: #4e4e4e;
+$parameter-title-lists: #a1a1a1;
+$parameter-title-color: #fff;
+$parameter-bottom: #5f5f5f;
+$vehicle-title-color: #1b6fee;
+$vehicle-dtc-card: #1c1c2b;
+$border-color: #565656;
+$background-theme-img: url(../assets/images/main-background-dark.png);
+$background-image:radial-gradient(#9498a5, #000);
+$quick-access:#3e66b0;
+$nofalut-ecu:#2abf42;
+/*Vehicle info new page*/
+$title-color-code: #fff;
+$ecu-status-sec: #000;
+$ec-status-title: #fff;
+$ecu-status: #fff;
+$dtc-code-color: #fff;
+$dtc-code-color: #fff;
+$dtc-gradient: linear-gradient(180deg, #353535, transparent);
+
+/*header*/
+$theme-toggle-black: #464646;
+$theme-toggle-round: #eee;
+$theme-toggle-path: #ffc207;
+$logo-invert: invert(0);
+$connection-active: #0066ff;
+$connectivity-check: #2f2f2f;
+$connection-success: #299355;
+$connection-failure: #e74c3c;
+$connection-shadow: inset 0.2em 0.2em 0.2em 0 rgb(255 255 255 / 50%),
+   inset -0.2em -0.2em 0.2em 0 rgb(0 0 0 / 50%),
+   5px 5px 32px rgb(200 200 200 / 60%);
+$login-action-background: #232334;
+$logout-hover: #7a7a7a;
+$logo-img: brightness(0) invert(1);
+
+/*hardware-interface*/
+$hardware-interface-background: #282828;
+$vci-model-box: rgba(252, 76, 2, 0.9);
+$popup-background: #454545;
+$hardware-button: #838383;
+
+/*Ecu tab view*/
+$sub-tab-shadow: 0px 0px 40px rgb(0 0 0 / 15%);
+$sub-tab-container: #151515;
+$tab-ul: #000;
+$tab-icon-active: #e26935;
+$ecu-failure: rgb(255 101 85 / 60%);
+$ecu-pass: rgba(82, 255, 155, 0.46);
+$ul-border-light: #393939;
+
+/*login screen*/
+$login-back: #343434;
+$login-box-shadow: 3px 3px 15px rgb(255 255 255 / 15%);
+
+/*solution offering / home page*/
+$text-color:#fff;
+
+/*sidebar style*/
+$sidebar-shadow: 0px 0px 10px rgba(0 0 0 / 61%);
+$icon-invert: invert(1);
+$sidebar-before: #545454;
+$sidebar-open: #565656;
+$sidebar-svg: #fff;
+$service-time: #b6b6b6;
+$background-mobile: rgb(123 123 123 / 50%);
+$icon-active:brightness(1) invert(0);
+
+/*service session*/
+$service-session-card: #3a3a3a;
+$service-session-border: #696969;
+$service-date: #d1d1d1;
+$active-service-session: #afffd44a;
+
+/*vehicle configuration */
+$bus-list: #333;
+$bus-list-shadow: 0px 0px 10px rgb(0 0 0 / 61%);
+$save-btn: #585858;
+$table-odd: #282828;
+$table-even: #2b2b3d;
+
+/*Water mark content*/
+$watermark-background: rgba(0, 0, 0, 1);
+$watermark-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+$watermark-loader: linear-gradient(180deg, #222222, #363636, #222222);
+$cloud-img: invert(1);
+/*Actuator Testing*/
+$actuator-background: #505050;
+$warning-border: #faebcc;
+$warning-background:#fcf8e3;
+$success-border:#d6e9c6;
+$success-background:#dff0d8;
+$success-color:#3c763d;
+$header-tab:#2c2c42;
+$tab-text:#726f6f;
+$tab-active:#1e1e2d;
+$active-text:#fff;
+/*Vehicle Delivery Verification*/
+$list-background: #303030;
+$list-border: #8f8f8f;
+$table-background-odd: #1e1e2d;
+$table-background-even: #2b2b3d;
+$flash-not-updated: #cb68689c;
+$flash-updated: #5fd68e69;
+$flashing-version: #dedede;
+$flashing-border: #fff;
+$desc-color: #cdcdcd;
+
+/*empty title*/
+$empty-title: #cacaca;
+
+/*vehicle calibration*/
+$select-background: #363636;
+$calib-input: #363636;
+$input-title: #fff;
+$input-border: #ddd;
+$input-placeholder: #a3a3a3;
+$calib-border: rgb(117 172 255);
+$pagination:#f5f5f5;
+$pagination-disabled:#000;
+
+/*flash screen*/
+$flash-running: rgb(59 114 196 / 84%);
+
+/*diagnostics measurement*/
+$diagnostics-text: #fff;
+$legend-dot: #4a4a4a;
+$graph-box:#3e66b0;
+/*flashing new*/
+
+$software-level-title: #f6f6f6;
+
+$software-detail-background: linear-gradient(45deg, #000, transparent);
+
+$flash-button: radial-gradient(
+   circle,
+   rgb(207 207 207) 30%,
+   rgb(118 118 118) 101%
+);
+
+$flashing-tree: #000;
+
+$tree-title: #686868;
+
+$tree-title-content: #fff;
+
+$dtc-software-details: #adadad;
+
+$flashing-container-title: #dfdfdf;
+
+$border-first: #404040;
+
+/*vehicle calibration*/
+$select-background: #363636;
+$calib-input: #363636;
+$input-title: #fff;
+$input-border: #ddd;
+$input-placeholder: #a3a3a3;
+$calib-border: rgb(117 172 255);
+$calib-card-background: #272727;
+$calib-ecu-name: #e6e6e6;
+$calib-inner-text: #e6e6e6;
+$calib-tab-title: #dcdcdc;
+$calib-status-background: #353535;
+$sidebar-icon: invert(1);
+.inner-component {
+   background-image: $background-theme-img;
+   height: 100vh;
+}

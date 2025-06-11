@@ -1,0 +1,176 @@
+.healthy {
+    fill: #6ee73588 !important;
+ }
+ 
+.faulty {
+    fill: #ff000044 !important;
+ }
+ 
+.optional {
+    fill: #98989983 !important;
+ }
+
+ .fill-blue {
+   fill: #0000ff98 !important;
+ }
+
+ .text-white {
+   color: white !important;
+ }
+
+ .loader-example{
+    position: relative;
+}
+.loader-example::before{
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $main-black;
+    border-radius: 50%;
+}
+.loader-example::after{
+    content: '';
+    position: absolute;
+    left: 51px;
+    top: 51px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border-color: $main-black;
+    animation: loader-animation 2s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);                
+    transform: scale(1);
+}
+@keyframes loader-animation {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+        border-width: 1px;
+        border-style: solid;
+    }
+    90%{
+        transform: scale(4);
+        opacity: 0;
+        border-width: 0px;
+        border-style: solid;
+    }
+    100%{
+        opacity: 0;
+    }            
+}
+
+ .text-attributes {
+    fill: $main_black;
+    font-family: Helvetica;
+    font-size: 12px;
+    text-anchor: middle;
+ }
+
+ .rectangle-attributes {
+    width: 90px;
+    height: 40px;
+    fill: $main-white;
+    stroke: $main-black;
+    pointer-events: all;
+ }
+
+ .line-attributes {
+    fill: none;
+    stroke: $main_black;
+    stroke-miterlimit: 10;
+    pointer-events: all;
+ }
+
+ .draw-color-bg {
+    color: $main-black;
+    background-color: $main-white;
+ }
+
+ .draw-color {
+    color: $main-black;
+ }
+
+ .box-style {
+    box-sizing: border-box;
+    font-size: 0px;
+    text-align: center;
+ }
+
+ .bus-style {
+    display: inline-block;
+    font-size: 12px;
+    font-family: Helvetica;
+    color: $main-black;
+    line-height: 1.2;
+    pointer-events: all;
+    background-color: $main-white;
+    white-space: nowrap;
+ }
+
+ .white-space-normal {
+    white-space: normal !important;
+ }
+
+ .text-style {
+    display: inline-block; 
+    font-size: 12px;
+    font-family: Helvetica;
+    color: $main-black;
+    line-height: 1.2;
+    pointer-events: all;
+    white-space: normal;
+    overflow-wrap: normal;
+ }
+
+ .text-class {
+    fill: $main-black;
+    font-family: Helvetica;
+    font-size: 12px;
+    text-anchor: middle;
+ }
+
+ .path-class {
+    fill: none;
+    stroke: $main-black;
+    stroke-miterlimit:10;
+    pointer-events:all;
+ }
+
+ .path-style {
+    fill: $main-white;
+    stroke: blue;
+    stroke-width: 2.5;
+    stroke-miterlimit: 10;
+    pointer-events: all;
+ }
+
+ .bus-class {
+    display: inline-block;
+    font-family: Helvetica;
+    color: $main-black;
+    line-height: 1.2;
+    pointer-events: all;
+    background-color: $main-white;
+    white-space: nowrap;
+ }
+
+ .rect-class {
+    fill: $main-white;
+    stroke: $main-black;
+    pointer-events: all;
+ }
+
+ .display-class {
+    display: flex;
+    align-items: unsafe center;
+    justify-content: unsafe center;
+ }
+
+ .foreign-object-style {
+    overflow: visible;
+    text-align: left
+ }
+
+ 

@@ -1,0 +1,44 @@
+.label-body{
+    border: 1px solid #ddd;
+    min-height: calc(100vh - 180px);
+}
+.label-list{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.label-box{
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    h6{
+        font-size: 15px;
+        border-bottom:1px solid #ddd ;
+        background: #ddd;
+    }
+    ul{
+        list-style-type: none;
+    }
+    li{
+        display: flex;
+    justify-content: space-around;
+    p{
+        width: 50%;
+    }
+    }
+}
+.label-data{
+    display: flex;
+    div{
+        padding: 10px;
+    }
+    .label-image{
+        margin-left: 35px;
+    }
+    img{
+        width: 90px;
+    }
+}
+.print{
+    float: right;
+}

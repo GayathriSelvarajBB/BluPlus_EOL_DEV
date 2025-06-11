@@ -1,0 +1,55 @@
+.vci-msg{
+    display: flex;
+    justify-content: center;
+}
+.disconnect-points{
+    margin-left: 50px;
+}
+.confirmation-modal-container {
+    padding: 10px 20px;
+    width: 600px;
+    max-width: 100%;
+
+    .icon-mark,
+    .info-icon {
+        max-width: 80px;
+        margin: 0 auto 20px;
+    }
+
+    .confirmation-text,
+    .main-text {
+        font-size: rem(15);
+        text-align: center;
+        font-family: "facto-bold", sans-serif;
+    }
+
+    .action-buttons {
+        margin: 25px 0 0 0;
+        display: flex;
+        justify-content: center;
+
+        button {
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: rem(15);
+            &:disabled{
+                cursor: not-allowed;
+                opacity: .5;
+            }
+        }
+        
+
+        .btn-cancel {
+            margin-right: 10px;
+            background-color: #ff2a2a;
+            color: white;
+        }
+
+        .btn-okay {
+            background-color: #27b700;
+            color: white;
+        }
+    }
+}

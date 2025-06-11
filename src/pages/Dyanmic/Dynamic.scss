@@ -1,0 +1,73 @@
+.dynamic-main {
+    margin: 10px;
+}
+.dynamic-parameter {
+    display: flex;
+    align-items: center;
+    width: 95%;
+}
+.dynamic-input {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    align-items: center;
+}
+.dynamic-check {
+    display: flex;
+    justify-content: space-around;
+    width: 92%;
+    .Completed-check {
+        span {
+            margin-left: 20px;
+        }
+    }
+}
+.Dynamic-parameter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    > div {
+        width: 100%;
+    }
+}
+.file-upload {
+    button {
+        background-color: #3e66b0;
+        border: 0px;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: rem(13);
+        cursor: pointer;
+        text-align: center;
+        height: 33px;
+        margin: 10px;
+    }
+    input {
+        height: 34px;
+        padding: 6px;
+        border-radius: 4px;
+        box-shadow: 0px 4px 5px 0px #000;
+    }
+}
+.camera-popup {
+    img {
+        position: absolute;
+        left: 90%;
+        height: 15px;
+        width: 15px;
+        top: 5%;
+    }
+    button{
+        background-color: #3e66b0;
+        border: 0px;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: rem(13);
+        cursor: pointer;
+        text-align: center;
+        height: 33px;
+        margin: 10px
+    }
+}
