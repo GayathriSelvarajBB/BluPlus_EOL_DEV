@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { UpdateEolSession } from "redux/eolSession.slice";
 import { useEffect } from "react";
 import { List_Of_Tool, SELECTED_TOOL } from "app_constants/listOfTools";
+import { allImages } from "utils/images";
 // import prognosticsIcon from "../../assets/images/EcuDiagonstic (1).png";
 
 const SolutionOffering = () => {
@@ -117,7 +118,7 @@ const SolutionOffering = () => {
                   <span>VEHICLE EOL</span>
                </div>
                <div className="card" onClick={navigateToManufactureStation}>
-                  <img src={remoteDiagIcon} alt="tool" />
+                  <img src={allImages.configurationIcon} alt="tool" />
                   <span>STATION CONFIGURATOR</span>
                </div>
             </div>
