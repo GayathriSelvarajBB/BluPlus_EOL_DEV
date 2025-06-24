@@ -337,10 +337,14 @@ export const isParameterShow = (SELECTED_TOOL_NAME, location) => {
             location?.pathname !== routePaths.VciConnective
          );
    }
-   // return (
-   //    !EOLHeader &&
-   //    location.pathname !== routePaths.solutionOffering &&
-   //    location.pathname !== routePaths.hardwareInterface &&
-   //    location.pathname !== routePaths.VciConnective
-   // );
+};
+
+export const getLocalStorageFile = (key) => {
+   let result = [];
+   const meta = localStorage.getItem(key);
+   if (meta) {
+      const metadata = JSON.parse(meta);
+      result = metadata;
+   }
+   return result;
 };

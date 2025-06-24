@@ -58,6 +58,8 @@ const routePaths = {
    Signoff: "/Signoff",
    //Manufacturing Station
    manufacturing: "/manufacturing-station",
+   createFile: "/manufacturing/create-file",
+   configWizard: "/manufacturing/config-wizard",
 };
 
 export default routePaths;

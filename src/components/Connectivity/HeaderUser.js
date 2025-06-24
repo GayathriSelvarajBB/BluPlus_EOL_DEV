@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 /* eslint-disable indent */
+/* eslint-disable no-unused-vars */
 
 import { useState, useEffect } from "react";
 import UserProfile from "assets/images/login-logo.png";
-import Logout from "assets/images/logout.png";
 // import vInfo from "assets/images/wheel.png";
+import downarrow from "../../assets/images/downarrow.png";
+import logout from "../../assets/images/logout.png";
 import LogoutMark from "assets/images/logout-mark.png";
 import { useNavigate } from "react-router-dom";
 import routePaths from "routes/routePaths";
@@ -45,6 +47,7 @@ const HeaderUser = () => {
       email: "",
       role: "",
    });
+   console.log("userInfo", userInfo);
    const freezeAll = useSelector((state) => state.freezeSlice);
 
    useEffect(() => {
@@ -65,6 +68,11 @@ const HeaderUser = () => {
       localStorage.removeItem("access");
       setLogoutConfirmOpen((val) => !val);
    };
+   const handleLogout = () => {
+      // localStorage.removeItem("scanEcuList");
+      localStorage.removeItem("access");
+      setLogoutConfirmOpen((val) => !val);
+   };
 
    const handleLogoutConfirm = () => {
       logoutUserAndClearData().then((res) => {
@@ -77,25 +85,10 @@ const HeaderUser = () => {
          localStorage.removeItem("access");
       });
    };
-   // const onclickGoToV_InfoPage = () => {
-   //    document.getElementById("user-profile-iconn").removeAttribute("tabindex");
-   //    document.getElementById("user-profile-iconn").tabIndex = "0";
-
-   //    navigate(routePaths.vehicleDetails);
-   // };
-   // const onclickGoToV_servicePage = () => {
-   //    document.getElementById("user-profile-iconn").removeAttribute("tabindex");
-   //    document.getElementById("user-profile-iconn").tabIndex = "0";
-
-   //    navigate(routePaths.serviceHistoryCopy);
-   // };
-   // const handleAddTabIndex = () => {
-   //    document.getElementById("user-profile-iconn").tabIndex = "0";
-   // };
 
    //handleClickHomeIcon
    const handleClickHomeIcon = () => {
-      localStorage.setItem("eolSession",JSON.stringify(false))
+      localStorage.setItem("eolSession", JSON.stringify(false));
       setHomePageOpen((val) => !val);
    };
    //handleClickNavigate to home/solution offering page
@@ -104,35 +97,12 @@ const HeaderUser = () => {
       localStorage.removeItem("sidebarMenuName");
       localStorage.removeItem("scanEcuList");
       navigate(routePaths.solutionOffering);
-      window.location.reload()
+      window.location.reload();
    };
 
    return (
       <>
-         {/* {location.pathname === routePaths.hardwareInterface ||
-         location.pathname === routePaths.serviceHistoryCopy ||
-         location.pathname === routePaths.vehicleDetails ? (
-            <div className="user-icon" id="user-profile-iconn" tabIndex="0">
-               <img
-                  src={Logo}
-                  alt="User Profile"
-                  className="v_info_img"
-                  onClick={handleAddTabIndex}
-               />
-               <ul className="drop_down_option">
-                  <li id="logout-button" onClick={onclickGoToV_InfoPage}>
-                     <Vinfo className="icon" />
-                     <span>Vehicle Info</span>
-                  </li>
-                  <li id="logout-button" onClick={onclickGoToV_servicePage}>
-                     <ServiceHistory className="icon" />
-                     <span>Service History</span>
-                  </li>
-               </ul>
-            </div>
-         ) : null} */}
-         {/* logout icon */}
-         <div className="user-icon" id="user-profile-icon" tabIndex="0">
+         {/* <div className="user-icon" id="user-profile-icon" tabIndex="0">
             <img src={UserProfile} alt="User Profile" id="user-img" />
             <ul>
                <div className="user-details-manage">
@@ -153,10 +123,39 @@ const HeaderUser = () => {
                   <span id="logout">Logout</span>
                </li>
             </ul>
-         </div>
+         </div> */}
 
-         {/* homepage/ solution offering page */}
-         {location.pathname !== routePaths.solutionOffering && location.pathname !== routePaths.createCampangin ? (
+         <div className="main-header-user">
+            <div className="user-icon" id="user-profile-icon">
+               <img src={UserProfile} alt="user-profile-icon" />
+            </div>
+            <div className="user-details-main">
+               <div className="user-details">
+                  <span>
+                     {userInfo?.role
+                        ? userInfo?.role?.split(".")[0]
+                        : "Admin"}
+                  </span>
+                  <span>
+                     {userInfo?.email
+                        ? userInfo?.email
+                        : "Admin@bluebinaries.com"}
+                  </span>
+               </div>
+               <div className="logout-dropdown" tabIndex="0">
+                  <img src={downarrow} alt="downarrow" />
+                  <ul onClick={handleLogout}>
+                     <li>
+                        <img src={logout} alt="log-out" />
+                        <span>Logout</span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         {/* home page icon/ solution offering page */}
+         {/* {location.pathname !== routePaths.solutionOffering &&
+         location.pathname !== routePaths.createCampangin ? (
             <div
                className={"home_icon_div"}
                onClick={
@@ -167,7 +166,7 @@ const HeaderUser = () => {
             >
                <img src={homeIcon} alt="home-icon" />
             </div>
-         ) : null}
+         ) : null} */}
 
          {/* Modal for logout confirmation */}
          <ConfirmingPopup
@@ -189,7 +188,6 @@ const HeaderUser = () => {
             title="Something is taking place in the background. Are you sure you want to exit?"
          />
       </>
-      
    );
 };
 

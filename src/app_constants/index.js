@@ -14,3 +14,10 @@ export const VEHICLE_FLASHING_DATA = "VEHICLE_FLASHING_DATA";
 
 export const HISTORY_CONFIG_ACTION = "HISTORY_CONFIG_ACTION";
 export const HISTORY_STATION_ACTION = "HISTORY_STATION_ACTION";
+export const MANUFACTURE_FILES = "MANUFACTURE_FILES";
+
+export const TAB_NAME = {
+   stationCount: "station-count",
+   editStation: "edit-station",
+   finishSetup: "finish-setup",
+};

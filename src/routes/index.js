@@ -63,6 +63,8 @@ import Dtccheck from "pages/Dtccheck/Dtccheck";
 import Shorttrack from "pages/Shorttrack/Shorttrack";
 import Eolsignoff from "pages/Eolsignoff/Eolsignoff";
 import ManufactureStation from "pages/ManufacturingStation/ManufactureStation/ManufactureStation";
+import CreateFile from "pages/ManufacturingStation/CreateFile/CreateFile";
+import ConfigWizard from "pages/ManufacturingStation/ConfigWizard/ConfigWizard";
 // import CampanginManger from "components/Campaignmanager/CampanginManager";
 
 const AppRoutes = () => {
@@ -241,6 +243,8 @@ const AppRoutes = () => {
                   path={routePaths.manufacturing}
                   element={<ManufactureStation />}
                />
+               <Route path={routePaths.createFile} element={<CreateFile />} />
+               <Route path={routePaths.configWizard} element={<ConfigWizard />} />
             </Route>
             <Route path={routePaths.Homepage} element={<Homepage />} />
 

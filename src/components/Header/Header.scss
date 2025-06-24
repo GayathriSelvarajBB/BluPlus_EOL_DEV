@@ -2,15 +2,17 @@
    display: flex;
    // flex-wrap: wrap;
    justify-content: space-between;
-   align-items: center;
-   background: $dtc-card-background;
+   align-items: baseline;
+   // background: $dtc-card-background;
+   background: $bg-blue-dark;
    position: relative;
    margin: 0 auto;
    box-shadow: $vech-info-shadow;
    width: 100%;
+   height: 126px;
    z-index: 9;
-   margin-bottom: 20px;
-   border-radius: 10px;
+   // margin-bottom: 20px;
+   // border-radius: 10px;
    // background: linear-gradient(to bottom, #001671 47%, #002888 100%);
    &.hardware-header {
       .header-vin-details {
@@ -117,7 +119,7 @@
       h2 {
          font-size: 17px;
          // color: #3e66b0;
-         color: $main-black;
+         color: $white-only;
          text-align: center;
          font-family: "Facto-bold";
       }
@@ -133,7 +135,8 @@
          width: 175px;
          padding-left: 25px;
          img {
-            filter: $logo-img;
+            // filter: $logo-img;
+            filter: brightness(0) invert(1);
          }
       }
       // .cursor_not_allowed {
@@ -612,5 +615,8 @@
    }
    .logo-section {
       width: auto !important;
+      img {
+         filter: brightness(0) invert(1) !important;
+      }
    }
 }

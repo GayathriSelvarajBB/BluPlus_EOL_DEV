@@ -4,9 +4,22 @@ $main-black: #000;
 $main-site-color: #e26935;
 $white-only: #fff;
 $black-only: #000;
-$main-bg: #4e71b4;
 
-$bg-light-blue:#d7e4ff6b;
+// $bg-main-body:#F0F1F3;
+
+$bg-blue: #3e66b0;
+$bg-blue-dark: #3e66b0;
+$bg-white-dark: #fff;
+$bg-light-blue: #d7e4ff6b;
+
+$bg-cancel: #b7392c;
+$bg-card: #f0f1f3;
+
+$bg-tab:#CCD6E7;
+// $text-tittle:#042b72;
+
+$shadow-fixed: 2px 3px 15px #0003;
+$shadow-card-fixed: 0px 4px 30px #3e67b87d;
 
 /*vehicle-info-page*/
 $setting-rotate: #1b6fee;
@@ -208,6 +221,6 @@ $calib-status-background: #f2f2f2;
 $sidebar-icon: invert(0);
 
 .inner-component {
-   background-image: $background-theme-img;
+   // background-image: $background-theme-img;
    height: 100vh;
 }

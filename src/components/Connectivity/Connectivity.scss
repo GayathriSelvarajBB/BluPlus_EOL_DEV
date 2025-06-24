@@ -222,9 +222,64 @@
       }
    }
 }
+// .toggle-icon-sec {
+//    width: 55px;
+//    background: $theme-toggle-black;
+//    height: 25px;
+//    display: flex;
+//    align-items: center;
+//    border-radius: 40px;
+//    justify-content: space-between;
+//    padding: 0 5px;
+//    position: relative;
+//    @include for-mini-large {
+//       width: 60px;
+//       height: 30px;
+//    }
+//    &::before {
+//       content: "";
+//       position: absolute;
+//       width: 20px;
+//       height: 20px;
+//       background: $theme-toggle-round;
+//       border-radius: 50%;
+//       left: 3px;
+//       transition: 0.3s ease all;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       @include for-mini-large {
+//          width: 25px;
+//          height: 25px;
+//       }
+//    }
+//    > div {
+//       width: 16px;
+//       height: 16px;
+//       display: flex;
+//    }
+//    svg {
+//       width: 100%;
+//       height: 100%;
+//       background: #464646;
+//       path,
+//       rect {
+//          fill: $theme-toggle-path;
+//          stroke: $theme-toggle-path;
+//       }
+//    }
+// }
+// .toggle-theme {
+//    margin-right: 10px;
+//    height: 25px;
+// }
+.toggle-theme {
+   margin-right: 10px;
+   height: 25px;
+   cursor: pointer;
+}
 .toggle-icon-sec {
    width: 55px;
-   background: $theme-toggle-black;
+   background: $bg-white-dark;
    height: 25px;
    display: flex;
    align-items: center;
@@ -232,46 +287,114 @@
    justify-content: space-between;
    padding: 0 5px;
    position: relative;
-   @include for-mini-large {
-      width: 60px;
-      height: 30px;
-   }
    &::before {
       content: "";
       position: absolute;
       width: 20px;
       height: 20px;
-      background: $theme-toggle-round;
+      background: $bg-blue;
       border-radius: 50%;
       left: 3px;
       transition: 0.3s ease all;
       top: 50%;
       transform: translateY(-50%);
-      @include for-mini-large {
-         width: 25px;
-         height: 25px;
+   }
+   .sun-icon {
+      position: relative;
+
+      img {
+         // filter: $filter-blue-black;
+         justify-content: center;
+         align-items: center;
+         display: flex;
       }
    }
-   > div {
-      width: 16px;
-      height: 16px;
+   .moon-icon {
+      position: relative;
+      img {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         // filter: $filter-img-white-only;
+      }
+   }
+}
+.main-header-user {
+   display: flex;
+   align-items: center;
+   margin-right: 15px;
+   cursor: default;
+   .user-icon {
+      margin-right: 10px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      position: relative;
+      background-color: #fff;
+   }
+   .header-user-details {
+      padding-left: 12px;
+      span {
+         font-size: 12px;
+         color: $main-white;
+      }
+   }
+}
+.user-details-main {
+   display: flex;
+   align-items: center;
+   .user-details {
       display: flex;
+      flex-direction: column;
+      padding: 5px;
+      span {
+         color: #fff;
+         font-size: 12px;
+         padding: 2px;
+      }
    }
-   svg {
-      width: 100%;
-      height: 100%;
-      background: #464646;
-      path,
-      rect {
-         fill: $theme-toggle-path;
-         stroke: $theme-toggle-path;
+   .logout-dropdown {
+      padding-left: 10px;
+      cursor: pointer;
+      &:focus {
+         ul {
+            visibility: visible;
+            opacity: 1;
+            cursor: pointer;
+            width: 10%;
+            z-index: 999;
+         }
+      }
+      ul {
+         list-style: none;
+         position: absolute;
+         right: 40px;
+         top: 60px;
+         background: $white-only;
+         border-radius: 5px;
+         opacity: 0;
+         visibility: hidden;
+         box-shadow: 1px 2px 5px #0003;
+
+         li {
+            padding: 10px;
+            border-radius: 5px;
+
+            img {
+               height: 16px;
+               width: 16px;
+               // filter: $filter;
+            }
+            span {
+               padding-left: 10px;
+               font-size: 12px;
+               color: $black-only;
+            }
+         }
       }
    }
 }
-.toggle-theme {
-   margin-right: 10px;
-   height: 25px;
-}
+
 .globe-svg {
    path {
       fill: transparent !important;
@@ -357,10 +480,10 @@
    margin-right: 12px;
    height: 26px;
    width: 26px;
-   img{
+   img {
       filter: $logo-img;
    }
 }
-.cursor_not_allowed{
+.cursor_not_allowed {
    cursor: not-allowed !important;
 }

@@ -64,7 +64,7 @@ const SolutionOffering = () => {
       // localStorage.setItem("eolSession", JSON.stringify(true));
       localStorage.setItem(
          "Heading",
-         JSON.stringify("MANUFACTURING STATION CONFIGURATOR")
+         JSON.stringify("Manufacturing Station Configurator")
       );
       localStorage.setItem(
          SELECTED_TOOL,

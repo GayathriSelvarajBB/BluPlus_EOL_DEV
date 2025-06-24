@@ -1,14 +1,21 @@
+/* eslint-disable no-unused-vars */
+
 import { HISTORY_CONFIG_ACTION, HISTORY_STATION_ACTION } from "app_constants";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { allImages } from "utils/images";
-
+import { ReactComponent as SearchIcon } from "../../../assets/images/search.svg";
+import { useNavigate } from "react-router-dom";
+import routePaths from "routes/routePaths";
 const ManufactureStation = () => {
    const [configHistoryData, setConfigHistoryData] = useState([]);
    const [stationHistoryData, setStationHistoryData] = useState([]);
+   const [openCreateModal, setOpenCreateModal] = useState(false);
 
+   const navigate = useNavigate();
 
+   //getting history data from localstorage
    useEffect(() => {
       let configHistoryData =
          JSON.parse(localStorage.getItem(HISTORY_CONFIG_ACTION)) || [];
@@ -25,6 +32,7 @@ const ManufactureStation = () => {
       );
       setStationHistoryData(sortStationData);
    }, []);
+
    const saveConfigHistory = (fileName) => {
       //  Update history state and localStorage
       const updatedHistory = [
@@ -68,48 +76,48 @@ const ManufactureStation = () => {
       );
    };
 
-   const handleCLickCreateFile = async () => {
-      try {
-         const fileName = "new-file.bcm";
-         const fileContent = ""; // Can be dynamic
+   // const handleClickCreateFile = async () => {
+   //    try {
+   //       const fileName = "new-file.bcm";
+   //       const fileContent = ""; // Can be dynamic
 
-         const isElectron = !!window?.electronAPI?.saveFile;
+   //       const isElectron = !!window?.electronAPI?.saveFile;
 
-         if (isElectron) {
-            const result = await window.electronAPI.saveFile(
-               fileName,
-               fileContent
-            );
-            if (!result.canceled) {
-               toast.success("File created successfully!");
-               const savedName = result.filePath.split(/[/\\]/).pop(); // Extract filename
-               saveConfigHistory(savedName);
-            }
-         } else {
-            const fileHandle = await window.showSaveFilePicker({
-               suggestedName: fileName,
-               types: [
-                  {
-                     description: "BCM Files",
-                     accept: { "text/plain": [".bcm"] },
-                  },
-               ],
-            });
+   //       if (isElectron) {
+   //          const result = await window.electronAPI.saveFile(
+   //             fileName,
+   //             fileContent
+   //          );
+   //          if (!result.canceled) {
+   //             toast.success("File created successfully!");
+   //             const savedName = result.filePath.split(/[/\\]/).pop(); // Extract filename
+   //             saveConfigHistory(savedName);
+   //          }
+   //       } else {
+   //          const fileHandle = await window.showSaveFilePicker({
+   //             suggestedName: fileName,
+   //             types: [
+   //                {
+   //                   description: "BCM Files",
+   //                   accept: { "text/plain": [".bcm"] },
+   //                },
+   //             ],
+   //          });
 
-            const writable = await fileHandle.createWritable();
-            await writable.write(fileContent);
-            await writable.close();
+   //          const writable = await fileHandle.createWritable();
+   //          await writable.write(fileContent);
+   //          await writable.close();
 
-            toast.success("File created successfully!");
-            saveConfigHistory(fileHandle.name);
-         }
-      } catch (error) {
-         if (error.name !== "AbortError") {
-            console.error("Error saving file:", error);
-            toast.error("Error saving file");
-         }
-      }
-   };
+   //          toast.success("File created successfully!");
+   //          saveConfigHistory(fileHandle.name);
+   //       }
+   //    } catch (error) {
+   //       if (error.name !== "AbortError") {
+   //          console.error("Error saving file:", error);
+   //          toast.error("Error saving file");
+   //       }
+   //    }
+   // };
 
    //handle click for Station section
    const handleStationCreateFIle = async () => {
@@ -154,59 +162,91 @@ const ManufactureStation = () => {
          }
       }
    };
-
+   const handleOpenCreatePopup = () => {
+      // setOpenCreateModal(!openCreateModal);
+      navigate(routePaths.createFile);
+   };
    return (
       <div className="manufacture-container">
+         {/* <CreateFileModal
+            isOpen={openCreateModal}
+            handleModal={handleOpenCreatePopup}
+            handleClickCreateFile={handleClickCreateFile}
+         /> */}
          <div className="mf-wrapper">
             <div className="mf-left">
-               <span className="title">Recent Activity</span>
-               <div className="mf-content">
-                  <div className="configuration">
-                     <p className="cf-title">Configuration</p>
+               <div className="activity-con">
+                  <span className="title">Recent Activity</span>
+                  <div className="mf-content">
+                     <div className="configuration">
+                        <div className="cf-title">
+                           <span>Configuration</span>
+                           <div className="search-box">
+                              <input
+                                 type="text"
+                                 placeholder="search by configuration"
+                              />
+                              <SearchIcon />
+                           </div>
+                        </div>
 
-                     <ol>
-                        {configHistoryData?.length > 0 ? (
-                           <>
-                              {configHistoryData?.map((item) => (
-                                 <li key={item?.time}>
-                                    <span>
-                                       {`${item?.fileName} ${item?.action} `}
-                                    </span>
-                                    <span>{`${moment(item?.time).format(
-                                       "DD MMM YYYY, hh:mm A"
-                                    )}`}</span>
-                                 </li>
-                              ))}
-                           </>
-                        ) : (
-                           <div className="no-data-found-manuf">
-                              <span>No history found</span>
+                        <ol>
+                           {configHistoryData?.length > 0 ? (
+                              <>
+                                 {configHistoryData?.map((item, i) => (
+                                    <li key={item?.time}>
+                                       <span>
+                                          {`${i + 1}. ${item?.fileName} ${
+                                             item?.action
+                                          } `}
+                                       </span>
+                                       <span>
+                                          {moment(item?.time).fromNow()}
+                                       </span>
+                                    </li>
+                                 ))}
+                              </>
+                           ) : (
+                              <div className="no-data-found-manuf">
+                                 <span>No history found</span>
+                              </div>
+                           )}
+                        </ol>
+                     </div>
+                     <div className="station">
+                        <div className="cf-title">
+                           <span>Stations</span>
+                           <div className="search-box">
+                              <input
+                                 type="text"
+                                 placeholder="search by station"
+                              />
+                              <SearchIcon />
                            </div>
-                        )}
-                     </ol>
-                  </div>
-                  <div className="station">
-                     <p className="cf-title">Stations</p>
-                     <ol>
-                        {stationHistoryData?.length > 0 ? (
-                           <>
-                              {stationHistoryData?.map((item) => (
-                                 <li key={item?.time}>
-                                    <span>
-                                       {`${item?.fileName} ${item?.action} `}
-                                    </span>
-                                    <span>{`${moment(item?.time).format(
-                                       "DD MMM YYYY, hh:mm A"
-                                    )}`}</span>
-                                 </li>
-                              ))}
-                           </>
-                        ) : (
-                           <div className="no-data-found-manuf">
-                              <span>No history found</span>
-                           </div>
-                        )}
-                     </ol>
+                        </div>
+                        <ol>
+                           {stationHistoryData?.length > 0 ? (
+                              <>
+                                 {stationHistoryData?.map((item, i) => (
+                                    <li key={item?.time}>
+                                       <span>
+                                          {`${i + 1}. ${item?.fileName} ${
+                                             item?.action
+                                          } `}
+                                       </span>
+                                       <span>
+                                          {moment(item?.time).fromNow()}
+                                       </span>
+                                    </li>
+                                 ))}
+                              </>
+                           ) : (
+                              <div className="no-data-found-manuf">
+                                 <span>No history found</span>
+                              </div>
+                           )}
+                        </ol>
+                     </div>
                   </div>
                </div>
             </div>
@@ -214,16 +254,22 @@ const ManufactureStation = () => {
                <div className="mf-config">
                   <p className="rcn-title">Configurations</p>
                   <div className="selection-con">
-                     <button className="sc-btn" onClick={handleCLickCreateFile}>
-                        <img src={allImages.createIcon} alt="icon" />
+                     <button className="sc-btn" onClick={handleOpenCreatePopup}>
+                        <div className="img-box">
+                           <img src={allImages.createIcon} alt="icon" />
+                        </div>
                         <span>Create</span>
                      </button>
-                     <button className="sc-btn" onClick={handleCLickCreateFile}>
-                        <img src={allImages.modifyIcon} alt="icon" />
+                     <button className="sc-btn">
+                        <div className="img-box">
+                           <img src={allImages.modifyIcon} alt="icon" />
+                        </div>
                         <span>Modify</span>
                      </button>
-                     <button className="sc-btn" onClick={handleCLickCreateFile}>
-                        <img src={allImages.syncIcon} alt="icon" />
+                     <button className="sc-btn">
+                        <div className="img-box">
+                           <img src={allImages.syncIcon} alt="icon" />
+                        </div>
                         <span>Sync</span>
                      </button>
                   </div>
@@ -235,21 +281,21 @@ const ManufactureStation = () => {
                         className="sc-btn"
                         onClick={handleStationCreateFIle}
                      >
-                        <img src={allImages.createIcon} alt="icon" />
+                        <div className="img-box">
+                           <img src={allImages.createIcon} alt="icon" />
+                        </div>
                         <span>Create</span>
                      </button>
-                     <button
-                        className="sc-btn"
-                        onClick={handleStationCreateFIle}
-                     >
-                        <img src={allImages.modifyIcon} alt="icon" />
+                     <button className="sc-btn">
+                        <div className="img-box">
+                           <img src={allImages.modifyIcon} alt="icon" />
+                        </div>
                         <span>Modify</span>
                      </button>
-                     <button
-                        className="sc-btn"
-                        onClick={handleStationCreateFIle}
-                     >
-                        <img src={allImages.syncIcon} alt="icon" />
+                     <button className="sc-btn">
+                        <div className="img-box">
+                           <img src={allImages.syncIcon} alt="icon" />
+                        </div>
                         <span>Sync</span>
                      </button>
                   </div>

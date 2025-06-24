@@ -1,4 +1,5 @@
 @import "./dark_theme.scss";
+@import "./animations.scss";
 @import "../pages/VechicleInfo/VechicleInfo.scss";
 @import "../components/Header/Header.scss";
 @import "../components/Connectivity/Connectivity.scss";
@@ -46,4 +47,8 @@
 @import "../pages/ADAS/ADAS.scss";
 @import "../pages/Static2/Static2.scss";
 @import "../pages/Dtccheck/Dtccheck.scss";
+
+//For Manufacturing
 @import "../pages/ManufacturingStation/ManufactureStation/manufactureStation";
+@import "../pages/ManufacturingStation/CreateFile/createFile.scss";
+@import "../pages/ManufacturingStation/ConfigWizard/configWizard.scss";

@@ -56,23 +56,23 @@
 }
 
 @font-face {
-   font-family: 'digital';
-   src: url(../assets/fonts/digital-7.ttf) format('truetype');
+   font-family: "digital";
+   src: url(../assets/fonts/digital-7.ttf) format("truetype");
 }
 
 @font-face {
-   font-family: 'Facto';
-   src: url(../assets/fonts/Facto.otf) format('opentype');
+   font-family: "Facto";
+   src: url(../assets/fonts/Facto.otf) format("opentype");
 }
 
 @font-face {
-   font-family: 'Facto-bold';
-   src: url(../assets/fonts/Facto_Bold.otf) format('opentype');
+   font-family: "Facto-bold";
+   src: url(../assets/fonts/Facto_Bold.otf) format("opentype");
 }
 
 @font-face {
-   font-family: 'Facto-extra-bold';
-   src: url(../assets/fonts/Facto-extra-bold.otf) format('opentype');
+   font-family: "Facto-extra-bold";
+   src: url(../assets/fonts/Facto-extra-bold.otf) format("opentype");
 }
 
 img {
@@ -81,11 +81,11 @@ img {
 }
 
 strong {
-   font-family: 'Facto-bold';
+   font-family: "Facto-bold";
 }
 
 body {
-   font-family: 'Facto';
+   font-family: "Facto";
    letter-spacing: 0.5px;
 }
 
@@ -98,7 +98,7 @@ body {
 }
 
 button {
-   font-family: 'Facto-bold';
+   font-family: "Facto-bold";
    cursor: pointer;
 }
 
@@ -106,7 +106,7 @@ input,
 textarea,
 select,
 option {
-   font-family: 'Facto';
+   font-family: "Facto";
 }
 
 .page-wrapper {
@@ -125,8 +125,8 @@ option {
       }
    }
 }
-.list-header{
-   @include for-sidebar(){
+.list-header {
+   @include for-sidebar() {
       display: none;
    }
 }
@@ -162,13 +162,13 @@ option {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-   background: #bbd6ff;
+   background: #0b449b;
    border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-   background: #1b6fee;
+   background: #234c88;
 }
 
 $baseFontSize: 16px;
@@ -192,18 +192,17 @@ html {
    -ms-text-size-adjust: $baseFontSize;
 }
 
-
 html {
    @media screen and (min-width: 700px) {
-      font-size: 14px
+      font-size: 14px;
    }
 
    @media screen and (max-width: 700px) {
-      font-size: 14px
+      font-size: 14px;
    }
 
    @media screen and (min-width: 1000px) {
-      font-size: 16px
+      font-size: 16px;
    }
 
    @media (min-width: 1400px) {
@@ -212,7 +211,7 @@ html {
 }
 
 .fisker-sprite {
-   background-image: url('../assets/images/fisker-sprite.png');
+   background-image: url("../assets/images/fisker-sprite.png");
 }
 
 .sidebar-active {
@@ -222,19 +221,18 @@ html {
       }
    }
 }
-@media screen  {
-   .list-header{
+@media screen {
+   .list-header {
       display: none;
    }
 }
 @include for-sidebar() {
-.list-header{
-   display: flex;
-}
-.page-wrapper .body-wrapper{
-   padding: 0px;
-  
-}
+   .list-header {
+      display: flex;
+   }
+   .page-wrapper .body-wrapper {
+      padding: 0px;
+   }
 }
 // @media  (min-width: 1100px) {
 //    .list-header{
@@ -299,8 +297,8 @@ html {
 .Toastify__toast--success {
    background: #32c236 !important;
    color: #fff;
-   svg{
-      path{
+   svg {
+      path {
          fill: #fff;
       }
    }
@@ -308,7 +306,6 @@ html {
       background-color: #b9ffbb !important;
    }
 }
-
 
 .Toastify__toast {
    .Toastify__toast-body {
@@ -323,15 +320,13 @@ html {
 }
 
 .inner-component {
-   padding: 20px;
+   // padding: 20px;
    background-size: cover;
    background-repeat: no-repeat;
    background-attachment: fixed;
 }
 .dark-theme {
-
    .rmsc.dark {
-
       --rmsc-main: #4285f4;
 
       --rmsc-hover: #0e0c0a;
@@ -345,13 +340,5 @@ html {
       --rmsc-bg: #363636;
 
       color: #fff;
-
    }
 }
-// @media (max-width:1300px) {
-//    .car2d_div{
-//       display: flex;
-//       flex-direction: column
-//    }
-// }
-

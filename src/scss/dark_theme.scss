@@ -3,10 +3,21 @@ $main-white: #000;
 $main-black: #fff;
 $white-only: #fff;
 $black-only: #000;
-$main-bg: #284272;
+$bg-blue: #284272;
+$bg-blue-dark: #212c4d;
+$bg-white-dark: #2b2b3d;
+$bg-light-blue: #242c3d;
 
-$bg-light-blue:#242c3d;
+// $bg-main-body:#F0F1F3;
 
+$bg-cancel: #b7392c;
+$bg-card: #2b2b3d;
+$bg-tab: #ccd6e7;
+
+// $text-tittle:#042b72;
+
+$shadow-fixed: 2px 3px 15px #0003;
+$shadow-card-fixed: 0px 4px 30px #3e67b87d;
 
 /*vehicle-info-page*/
 $main-site-color: #e26935;
@@ -25,11 +36,11 @@ $status-update: #fa5c19;
 $error-code: #ff0000;
 $indicaters-color: #fff;
 $background-image: url("../assets/images/car2d_darkMode.png");
-$good-ecu:  #41ad48;
+$good-ecu: #41ad48;
 $fault-ecu: #f47d1f;
-$active-fault-ecu:#ed5d62;
-$In-active-fault-ecu:#f5d349;
-$pending-fault-ecu:#c7c8ca;
+$active-fault-ecu: #ed5d62;
+$In-active-fault-ecu: #f5d349;
+$pending-fault-ecu: #c7c8ca;
 $inactive-fault-ecu: #dfd3d5;
 $vech-info-shadow: 0px 0px 10px rgb(0 0 0 / 61%);
 $extra-title: #999999;
@@ -41,7 +52,7 @@ $dtc-issue-color: rgb(255 101 85 / 60%);
 $dtc-bus-info: #878787;
 $dtc-border: #505050;
 $dtc-card-background: #1e1e2d;
-$logout-button:#202030;
+$logout-button: #202030;
 $vehicle-info-popup: #454545;
 $background-box: #4a4a4a;
 $list-circle: #363636;
@@ -57,10 +68,10 @@ $parameter-bottom: #5f5f5f;
 $vehicle-title-color: #1b6fee;
 $vehicle-dtc-card: #1c1c2b;
 $border-color: #565656;
-$background-theme-img: url(../assets/images/main-background-dark.png);
-$background-image:radial-gradient(#9498a5, #000);
-$quick-access:#3e66b0;
-$nofalut-ecu:#2abf42;
+$background-theme-img: url(../assets/images/main-background.png);
+$background-image: radial-gradient(#9498a5, #000);
+$quick-access: #3e66b0;
+$nofalut-ecu: #2abf42;
 /*Vehicle info new page*/
 $title-color-code: #fff;
 $ecu-status-sec: #000;
@@ -106,7 +117,7 @@ $login-back: #343434;
 $login-box-shadow: 3px 3px 15px rgb(255 255 255 / 15%);
 
 /*solution offering / home page*/
-$text-color:#fff;
+$text-color: #fff;
 
 /*sidebar style*/
 $sidebar-shadow: 0px 0px 10px rgba(0 0 0 / 61%);
@@ -116,7 +127,7 @@ $sidebar-open: #565656;
 $sidebar-svg: #fff;
 $service-time: #b6b6b6;
 $background-mobile: rgb(123 123 123 / 50%);
-$icon-active:brightness(1) invert(0);
+$icon-active: brightness(1) invert(0);
 
 /*service session*/
 $service-session-card: #3a3a3a;
@@ -139,14 +150,14 @@ $cloud-img: invert(1);
 /*Actuator Testing*/
 $actuator-background: #505050;
 $warning-border: #faebcc;
-$warning-background:#fcf8e3;
-$success-border:#d6e9c6;
-$success-background:#dff0d8;
-$success-color:#3c763d;
-$header-tab:#2c2c42;
-$tab-text:#726f6f;
-$tab-active:#1e1e2d;
-$active-text:#fff;
+$warning-background: #fcf8e3;
+$success-border: #d6e9c6;
+$success-background: #dff0d8;
+$success-color: #3c763d;
+$header-tab: #2c2c42;
+$tab-text: #726f6f;
+$tab-active: #1e1e2d;
+$active-text: #fff;
 /*Vehicle Delivery Verification*/
 $list-background: #303030;
 $list-border: #8f8f8f;
@@ -168,8 +179,8 @@ $input-title: #fff;
 $input-border: #ddd;
 $input-placeholder: #a3a3a3;
 $calib-border: rgb(117 172 255);
-$pagination:#f5f5f5;
-$pagination-disabled:#000;
+$pagination: #f5f5f5;
+$pagination-disabled: #000;
 
 /*flash screen*/
 $flash-running: rgb(59 114 196 / 84%);
@@ -177,7 +188,7 @@ $flash-running: rgb(59 114 196 / 84%);
 /*diagnostics measurement*/
 $diagnostics-text: #fff;
 $legend-dot: #4a4a4a;
-$graph-box:#3e66b0;
+$graph-box: #3e66b0;
 /*flashing new*/
 
 $software-level-title: #f6f6f6;
@@ -216,6 +227,6 @@ $calib-tab-title: #dcdcdc;
 $calib-status-background: #353535;
 $sidebar-icon: invert(1);
 .inner-component {
-   background-image: $background-theme-img;
+   // background-image: $background-theme-img;
    height: 100vh;
 }

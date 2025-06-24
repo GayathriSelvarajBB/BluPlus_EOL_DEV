@@ -9,8 +9,10 @@ import { ecuSocket } from "socket";
 import { socketEvents } from "socket/socketConstants";
 import { ReactComponent as UsbFillIcon } from "assets/images/usb-fill.svg";
 import { ReactComponent as GlobeFillIcon } from "assets/images/globe-fill.svg";
-import { ReactComponent as DarkThemeIcon } from "assets/images/dark-theme-icon.svg";
-import { ReactComponent as LightThemeIcon } from "assets/images/light-theme-icon.svg";
+// import { ReactComponent as DarkThemeIcon } from "assets/images/dark-theme-icon.svg";
+// import { ReactComponent as LightThemeIcon } from "assets/images/light-theme-icon.svg";
+import moon from "../../assets/images/moon.png";
+import sun from "../../assets/images/sun.png";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -123,7 +125,7 @@ export const Connectivity = ({
       // showToastBasedOnResponse(data, isVciDisconnected);
       // emitting retry event when VCI disconnected error from server
       // Rechecking the connection after 3 seconds
-      dispatch(setVciStatusRedux(data?.error))
+      dispatch(setVciStatusRedux(data?.error));
       setTimeout(() => {
          emitGetConnectivityStatusEvent();
       }, 6000);
@@ -198,7 +200,7 @@ export const Connectivity = ({
                </React.Fragment>
             )}
 
-            <div
+            {/* <div
                className="toggle-theme"
                id="toggle-theme"
                data-testid="toggle-theme"
@@ -213,6 +215,26 @@ export const Connectivity = ({
                   </div>
                   <div className="sun-icon" id="sun-icon">
                      <LightThemeIcon />
+                  </div>
+               </div>
+            </div> */}
+            <div className="toggle-theme">
+               <div
+                  className="toggle-icon-sec"
+                  id="toggle-theme"
+                  name="toggle-theme"
+                  onClick={toggleTheme}
+                  title={
+                     themeChange
+                        ? "Switch to light theme"
+                        : "Switch to dark theme"
+                  }
+               >
+                  <div className="sun-icon" id="sun-icon" name="sun-icon">
+                     <img src={sun} alt="sun" />
+                  </div>
+                  <div className="moon-icon" id="moon-icon" name="moon-icon">
+                     <img src={moon} alt="moon" />
                   </div>
                </div>
             </div>
