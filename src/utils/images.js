@@ -6,4 +6,7 @@ export const allImages = {
    homeIcon: require("../../src/assets/images/home-button.png"),
    folderIcon: require("../../src/assets/images/open-folder.png"),
    downArrowIcon: require("../../src/assets/images/downarrow.png"),
+   deleteIcon: require("../../src/assets/images/delete.png"),
+   arrowUDIcon: require("../../src/assets/images/arrow-ud.png"),
+   addIcon: require("../../src/assets/images/add.png"),
 };

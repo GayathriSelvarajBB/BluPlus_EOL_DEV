@@ -21,3 +21,19 @@ export const stationCountSchema = Yup.object({
       .required("Number of stations is required")
       .min(1, "Must be at least 1 station"),
 });
+
+export const editStationSchema = Yup.object().shape({
+   stations: Yup.array().of(
+      Yup.object().shape({
+         stationName: Yup.string().required("Station name is required"),
+         // .min(3, "Too short"),
+         pdx_file: Yup.mixed().required("PDX file is required"),
+         // .test("fileType", "Only PDF or ZIP allowed", (value) => {
+         //    return (
+         //       value &&
+         //       ["application/pdf", "application/zip"].includes(value.type)
+         //    );
+         // }),
+      })
+   ),
+});

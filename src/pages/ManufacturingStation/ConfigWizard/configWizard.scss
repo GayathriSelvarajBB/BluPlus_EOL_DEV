@@ -24,10 +24,11 @@
          text-align: center;
          font-weight: bold;
          padding: 20px;
+         color: $main-black;
       }
       .wizard-box {
-         width: min(600px, 62%);
-         height: 300px;
+         width: min(645px, 80%);
+         // height: 400px;
          margin: auto;
          background: $bg-card;
          border: 1px solid #ffffffb5;
@@ -47,7 +48,7 @@
             justify-content: start;
             align-items: center;
             span {
-               cursor: pointer;
+               // cursor: pointer;
                width: 40%;
                font-size: 13px;
                clip-path: polygon(
@@ -83,7 +84,9 @@
       }
    }
 }
-
+/*================================
+      station count
+================================*/
 .station-count {
    .form-group {
       position: relative;
@@ -100,13 +103,16 @@
          align-items: center;
          margin: 0px !important;
          input {
-            border: none;
+            // border: none;
             margin: auto 4px;
             padding: 5px;
             border-radius: 3px;
-            font-family: "Facto" I !important;
+            font-family: "Facto" !important;
+            color: $main-black;
+            background: $bg-white-dark;
+            border: 1px solid $main-white !important;
             &::placeholder {
-               font-family: "Facto" I !important;
+               font-family: "Facto" !important;
             }
             &.station-input {
                width: 25%;
@@ -189,9 +195,13 @@
          justify-content: center;
          gap: 5px;
          font-size: 13px;
+         transition: all 0.3s ease-in-out;
+         &:hover {
+            box-shadow: 2px 4px 6px #393b3e;
+         }
          img {
             width: 18px;
-            filter: invert(1);
+            // filter: invert(1);
          }
       }
    }
@@ -203,6 +213,7 @@
    margin-top: 35px;
    padding: 5px 10px;
    .btn {
+      cursor: pointer;
       font-size: 13px;
       min-width: 90px;
       text-align: center;
@@ -220,7 +231,7 @@
 }
 
 .error {
-   border: 1px solid tomato;
+   border: 1px solid tomato !important;
 }
 .error-con {
    position: absolute;
@@ -230,17 +241,25 @@
    left: 8px;
 }
 
+.btn {
+   transition: all 0.3s ease;
+   &:hover {
+      box-shadow: 2px 4px 6px #393b3e;
+   }
+}
 //react select search package
 .select-search-container {
    width: 100% !important;
    .select-search-value {
       input {
-         border: none !important;
+         border: 1px solid $main-white !important;
          height: 30px !important;
          font-size: 13px !important;
          font-family: "Facto" !important;
+         color: $main-black;
+         background: $bg-white-dark;
          &:hover {
-            border: none !important;
+            border: 1px solid $main-white !important;
          }
       }
    }
@@ -249,9 +268,224 @@
       border: 1px solid #3e66b087 !important;
       box-shadow: 1px 3px 8px #3e66b05e !important;
       top: 40px !important;
+      max-height: 300px !important;
       //text
       .select-search-option {
          font-size: 13px !important;
+      }
+   }
+}
+
+/*========================
+      edit-station
+========================*/
+.edit-station {
+   .table-container {
+      padding: 10px;
+      table {
+         border-collapse: collapse;
+         width: 100%;
+         font-size: 13px;
+         thead {
+            tr {
+               border-bottom: 2px solid rgba(165, 177, 199, 0.5490196078);
+            }
+         }
+
+         th,
+         td {
+            padding: 10px 0px;
+            color: $main-black;
+            width: 100px;
+            min-width: 75px;
+            text-align: center;
+         }
+         .common-div {
+            display: flex;
+            align-items: center;
+            padding: 0px 5px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+         }
+         .th-sno {
+            text-align: start;
+         }
+
+         tbody {
+            tr {
+               border-bottom: 2px solid #a5b1c78c;
+               input {
+                  padding: 5px;
+                  // border: 1px solid transparent;
+                  border-radius: 5px;
+                  color: $main-black;
+                  background: $bg-white-dark;
+                  border: 1px solid $main-white;
+                  &::placeholder {
+                     font-size: 13px;
+                     color: #2a4474a1;
+                  }
+               }
+            }
+            .browse-con {
+               display: flex;
+               gap: 5px;
+               .browse {
+                  cursor: pointer;
+                  background: $bg-blue;
+                  border: none;
+                  width: 100px;
+                  padding: 5px;
+                  border-radius: 40px;
+                  color: $white-only;
+                  box-shadow: $shadow-fixed;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 5px;
+                  font-size: 13px;
+                  transition: all 0.3s ease;
+                  &:hover {
+                     box-shadow: 2px 4px 6px #393b3e;
+                  }
+                  img {
+                     width: 17px;
+                     // filter: invert(1);
+                  }
+               }
+               .delete {
+                  cursor: pointer;
+                  display: grid;
+                  place-items: center;
+                  background: $bg-cancel;
+                  border-radius: 40px;
+                  width: 25px;
+                  height: 25px;
+                  padding: 4px;
+                  box-shadow: $shadow-fixed;
+                  img {
+                     width: 14px;
+                  }
+               }
+            }
+            .sno-con {
+               display: flex;
+               align-items: center;
+               img {
+                  width: 18px;
+                  margin-right: 10px;
+               }
+            }
+         }
+      }
+      .table-scroll-container {
+         max-height: 241px;
+         overflow: auto;
+      }
+   }
+   .edit-btn {
+      margin-top: 0px;
+      .btn-left-con {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+      }
+      img {
+         width: 17px;
+         filter: invert(1);
+         margin-right: 6px;
+      }
+   }
+}
+/*======================
+      finish setup
+======================*/
+.finish-setup-con {
+   .fs-title {
+      font-weight: bold;
+      text-align: center;
+      color: $main-black;
+   }
+   .summary {
+      border-top: 2px solid #a5b1c78c;
+      border-bottom: 2px solid #a5b1c78c;
+      padding: 10px;
+      margin: 10px 10px 0px;
+      color: $main-black;
+      div {
+         display: flex;
+         align-items: center;
+         justify-content: start;
+         margin-bottom: 5px;
+         &.no-of-station {
+            margin-bottom: 0px !important;
+            input {
+               width: 10% !important;
+            }
+         }
+         span {
+            width: 50%;
+         }
+         input {
+            width: 50%;
+            padding: 5px;
+            border-radius: 5px;
+            color: $main-black;
+            background: $bg-white-dark;
+            border: 1px solid $main-white;
+         }
+      }
+   }
+   .fs-table-container {
+      max-height: 180px;
+      overflow: auto;
+      margin: 0px 10px 10px;
+      table {
+         border-collapse: collapse;
+         width: 100%;
+         // margin: 10px;
+         th,
+         td {
+            padding: 8px 0px;
+            color: $main-black;
+            width: 100px;
+            text-align: start;
+         }
+         tr {
+            border-bottom: 2px solid rgba(165, 177, 199, 0.5490196078);
+         }
+         .th-sno,
+         .td-sno {
+            // background: #ddd;
+            width: 51px !important;
+            text-align: center;
+         }
+         .common-div {
+            width: 100%;
+            input {
+               width: 90%;
+               padding: 5px;
+               font-size: 13px;
+               border-radius: 4px;
+               color: $main-black;
+               background: $bg-white-dark;
+               border: 1px solid $main-white;
+            }
+         }
+      }
+   }
+   .finish-setup-btn {
+      margin: 0;
+      // margin-top: 0px !important;
+      .btn-left-con {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+      }
+      img {
+         width: 17px;
+         filter: invert(1);
+         margin-right: 6px;
       }
    }
 }

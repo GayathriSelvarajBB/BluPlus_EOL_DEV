@@ -47,7 +47,6 @@ const HeaderUser = () => {
       email: "",
       role: "",
    });
-   console.log("userInfo", userInfo);
    const freezeAll = useSelector((state) => state.freezeSlice);
 
    useEffect(() => {

@@ -8,15 +8,58 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import routePaths from "routes/routePaths";
 import { allImages } from "utils/images";
-import StationCount from "./StationCount";
 import EditStation from "./EditStation";
-import FinishSetup from "./FinishSetup";
+import StationCount from "./StationCount";
+import { editStationSchema, stationCountSchema } from "../Validations";
+import { toast } from "react-toastify";
+import { useFormik } from "formik";
+import FinishSetup from "./FinishSetup.jsx";
 
 const ConfigWizard = () => {
    const navigate = useNavigate();
    const [configHistoryData, setConfigHistoryData] = useState([]);
    const [stationHistoryData, setStationHistoryData] = useState([]);
    const [activeTab, setActiveTab] = useState(TAB_NAME.stationCount);
+
+   //formik validation for station count
+   const stationCountFormik = useFormik({
+      initialValues: { pdx_selection: "", pdx_file: null, no_of_station: "" },
+      validationSchema: stationCountSchema,
+      onSubmit: (value) => {
+         toast.success("form submitted successfully");
+         setActiveTab(TAB_NAME.editStation);
+      },
+   });
+   const generateStations = (count) =>
+      Array.from({ length: count }, (_, i) => ({
+         id: Date.now() + i,
+         stationName: "",
+         pdx_file: null,
+      }));
+   const [editStationsFormData, setEditStationsFormData] = useState(
+      generateStations(stationCountFormik.values.no_of_station)
+   );
+   const editStationFormik = useFormik({
+      initialValues: { stations: editStationsFormData },
+      validationSchema: editStationSchema,
+      onSubmit: (value) => {
+         toast.success("form submitted successfully");
+         setActiveTab(TAB_NAME.finishSetup);
+      },
+   });
+   // console.log("editStationFormik", editStationFormik);
+   console.log("values", editStationFormik.values);
+   console.log("errors", editStationFormik.errors);
+   // Regenerate stations when stationCount changes
+   useEffect(() => {
+      setEditStationsFormData(
+         generateStations(stationCountFormik.values.no_of_station)
+      );
+      editStationFormik.setFieldValue(
+         "stations",
+         generateStations(stationCountFormik.values.no_of_station)
+      );
+   }, [stationCountFormik.values.no_of_station]);
 
    //getting history data from localstorage
    useEffect(() => {
@@ -83,10 +126,27 @@ const ConfigWizard = () => {
 
                <div className="tab-box">
                   {activeTab === TAB_NAME.stationCount && (
-                     <StationCount setActiveTab={setActiveTab} />
+                     <StationCount
+                        stationCountFormik={stationCountFormik}
+                        setActiveTab={setActiveTab}
+                     />
                   )}
-                  {activeTab === TAB_NAME.editStation && <EditStation />}
-                  {activeTab === TAB_NAME.finishSetup && <FinishSetup />}
+                  {activeTab === TAB_NAME.editStation && (
+                     <EditStation
+                        stationCountFormik={stationCountFormik}
+                        editStationFormik={editStationFormik}
+                        editStationsFormData={editStationsFormData}
+                        setEditStationsFormData={setEditStationsFormData}
+                        setActiveTab={setActiveTab}
+                     />
+                  )}
+                  {activeTab === TAB_NAME.finishSetup && (
+                     <FinishSetup
+                        stationCountFormik={stationCountFormik}
+                        editStationFormik={editStationFormik}
+                        setActiveTab={setActiveTab}
+                     />
+                  )}
                </div>
             </div>
          </div>

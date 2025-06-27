@@ -1,4 +1,5 @@
 /* eslint-disable indent */
+/* eslint-disable no-unused-vars */
 
 import routePaths from "routes/routePaths";
 import { useEffect, useLayoutEffect, useState } from "react";
@@ -72,12 +73,10 @@ const Header = ({ redirectTo = routePaths.login }) => {
 
    // let minn = 20;
    // let maxx = 35;
-   console.log(random);
    useEffect(() => {
       if (location.pathname !== routePaths.solutionOffering) {
          const ChangeHeading = JSON.parse(localStorage.getItem("Heading"));
          setHeading(ChangeHeading);
-         console.log("ChangeHeading", ChangeHeading);
       } else {
          setHeading("MANUFACTURING SOLUTIONS");
       }
