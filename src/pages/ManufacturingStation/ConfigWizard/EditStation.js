@@ -5,6 +5,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { allImages } from "utils/images";
 import { ReactSortable } from "react-sortablejs";
 import { TAB_NAME } from "app_constants";
+import OpenFileSelectorModal from "../ReactModals/OpenFileSelection.jsx";
 const EditStation = ({
    stationCountFormik,
    editStationFormik,
@@ -14,24 +15,23 @@ const EditStation = ({
 }) => {
    console.log("editStationFormik", editStationFormik);
 
-   // const handleChange = (index, field, value) => {
-   //    const updated = [...stations];
-   //    updated[index][field] = value;
-   //    setStations(updated);
-   // };
    const inputRef = useRef([]);
+   const [isFileSelectionOpen, setIsFileSelectionOpen] = useState(false);
+   const [rowIndex, setRowIndex] = useState(null);
    useEffect(() => {
       inputRef.current = editStationFormik.values.stations.map(
          (_, i) => inputRef.current[i] || React.createRef()
       );
    }, [editStationFormik.values.stations.length]);
 
-   // const handleBroseFile = () => {
-   //    inputRef.current.click();
-   // };
-   const handleBroseFile = (index) => {
-      inputRef.current[index]?.current?.click();
+   const handleOpenFileSelector = (index) => {
+      setIsFileSelectionOpen(!isFileSelectionOpen);
+      setRowIndex(index);
+      // inputRef.current.click();
    };
+   // const handleBroseFile = (index) => {
+   //    inputRef.current[index]?.current?.click();
+   // };
    const handleFileChange = (e, index) => {
       const file = e.target.files[0];
       if (file) {
@@ -50,12 +50,6 @@ const EditStation = ({
    };
 
    const handleAddRow = () => {
-      // const currentCount = Number(stationCountFormik.values.no_of_station) || 0;
-      // const newCount = currentCount + 1;
-
-      // // Update the station count
-      // stationCountFormik.setFieldValue("no_of_station", newCount);
-
       // Add a new row to the stations array
       const newStation = {
          id: Date.now(), // or use uuid()
@@ -74,6 +68,13 @@ const EditStation = ({
    };
    return (
       <div className="edit-station">
+         <OpenFileSelectorModal
+            isOpen={isFileSelectionOpen}
+            rowIndex={rowIndex}
+            editStationFormik={editStationFormik}
+            handleFileChange={handleFileChange}
+            setIsFileSelectionOpen={setIsFileSelectionOpen}
+         />
          <form onSubmit={editStationFormik.handleSubmit}>
             <div className="table-container">
                <table className="table-header">
@@ -164,7 +165,10 @@ const EditStation = ({
                                     <div
                                        className="browse"
                                        // onClick={handleBroseFile}
-                                       onClick={() => handleBroseFile(index)}
+                                       // onClick={() => handleBroseFile(index)}
+                                       onClick={() =>
+                                          handleOpenFileSelector(index)
+                                       }
                                     >
                                        <input
                                           type="file"
