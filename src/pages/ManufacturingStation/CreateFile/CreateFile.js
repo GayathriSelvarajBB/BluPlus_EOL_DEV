@@ -107,7 +107,7 @@ const CreateFile = () => {
          >
             <img src={allImages.homeIcon} alt="home" />
          </div>
-         {isFileCreated ? (
+         {!isFileCreated ? (
             <div className="content-box">
                <p>
                   Dou you want to create new configuration or re-use an existing
