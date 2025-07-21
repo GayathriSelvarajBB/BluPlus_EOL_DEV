@@ -164,8 +164,6 @@ const EditStation = ({
                                     />
                                     <div
                                        className="browse"
-                                       // onClick={handleBroseFile}
-                                       // onClick={() => handleBroseFile(index)}
                                        onClick={() =>
                                           handleOpenFileSelector(index)
                                        }

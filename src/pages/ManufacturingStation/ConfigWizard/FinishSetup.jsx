@@ -1,10 +1,13 @@
 import { TAB_NAME } from "app_constants";
+import { useNavigate } from "react-router-dom";
+import routePaths from "routes/routePaths";
 
 const FinishSetup = ({
    stationCountFormik,
    editStationFormik,
    setActiveTab,
 }) => {
+   const navigate = useNavigate();
    return (
       <div className="finish-setup-con">
          <p className="fs-title">Initial configuration summary</p>
@@ -92,7 +95,10 @@ const FinishSetup = ({
                >
                   Previous
                </span>
-               <button className="btn" type="submit">
+               <button
+                  className="btn"
+                  onClick={() => navigate(routePaths.assemblyLine)}
+               >
                   Create Configuration
                </button>
             </div>

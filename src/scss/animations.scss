@@ -6,3 +6,11 @@
       opacity: 1;
    }
 }
+@keyframes zoom_anim {
+   0% {
+      transform: scale(0, 0);
+   }
+   100% {
+      transform: scale(1, 1);
+   }
+}

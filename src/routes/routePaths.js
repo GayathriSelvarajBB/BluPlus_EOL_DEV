@@ -60,6 +60,7 @@ const routePaths = {
    manufacturing: "/manufacturing-station",
    createFile: "/manufacturing/create-file",
    configWizard: "/manufacturing/config-wizard",
+   assemblyLine: "/manufacturing/assembly-line",
 };
 
 export default routePaths;

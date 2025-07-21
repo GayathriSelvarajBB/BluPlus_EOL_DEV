@@ -65,6 +65,7 @@ import Eolsignoff from "pages/Eolsignoff/Eolsignoff";
 import ManufactureStation from "pages/ManufacturingStation/ManufactureStation/ManufactureStation";
 import CreateFile from "pages/ManufacturingStation/CreateFile/CreateFile";
 import ConfigWizard from "pages/ManufacturingStation/ConfigWizard/ConfigWizard";
+import AssemblyLine from "pages/ManufacturingStation/AssemblyLine/AssemblyLine.jsx";
 // import CampanginManger from "components/Campaignmanager/CampanginManager";
 
 const AppRoutes = () => {
@@ -244,7 +245,14 @@ const AppRoutes = () => {
                   element={<ManufactureStation />}
                />
                <Route path={routePaths.createFile} element={<CreateFile />} />
-               <Route path={routePaths.configWizard} element={<ConfigWizard />} />
+               <Route
+                  path={routePaths.configWizard}
+                  element={<ConfigWizard />}
+               />
+               <Route
+                  path={routePaths.assemblyLine}
+                  element={<AssemblyLine />}
+               />
             </Route>
             <Route path={routePaths.Homepage} element={<Homepage />} />
 

@@ -37,3 +37,19 @@ export const editStationSchema = Yup.object().shape({
       })
    ),
 });
+
+export const assemblyStationInitialValues = {
+   stations: [
+      // {
+      //    stationName: "",
+      //    operations: [
+      //       {
+      //          operation: 1,
+      //          pdx_file: null,
+      //          ecu: "",
+      //          sequence_or_service: "",
+      //       },
+      //    ],
+      // },
+   ],
+};
